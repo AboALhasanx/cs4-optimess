@@ -76,6 +76,7 @@ from term2_keyboard import (
 )
 from services.content_registry import ContentRegistry
 from services.content_sender import send_content_for_command
+from services.message_logger import log_and_forward_message
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
 content_registry = ContentRegistry()
@@ -588,38 +589,7 @@ def get_file_command(message, command):
     ],
 )
 def log_and_forward(message):
-    user_id = message.from_user.id
-    username = message.from_user.username or "NoUsername"
-    first_name = message.from_user.first_name or ""
-    last_name = message.from_user.last_name or ""
-    full_name = (first_name + " " + last_name).strip()
-
-    log_msg = (
-        f"👤 رسالة جديدة:\n"
-        f"• الاسم: {full_name}\n"
-        f"• اليوزر: @{username}\n"
-        f"• الايدي: {user_id}\n"
-        f"• نوع الرسالة: {message.content_type}\n"
-    )
-
-    if user_id != ADMIN_ID:
-        sent = bot.send_message(LOG_CHANNEL_ID, log_msg)
-
-        # لو الرسالة نصية نرسلها كرد على رسالة التفاصيل
-        if message.content_type == "text":
-            bot.send_message(
-                LOG_CHANNEL_ID, message.text, reply_to_message_id=sent.message_id
-            )
-        else:
-            # للملفات والأنواع الأخرى فقط نعيد توجيه الرسالة (بدون رد)
-            try:
-                bot.forward_message(
-                    chat_id=LOG_CHANNEL_ID,
-                    from_chat_id=message.chat.id,
-                    message_id=message.message_id,
-                )
-            except Exception as e:
-                print(f"خطأ في إعادة توجيه الرسالة إلى القناة: {e}")
+    log_and_forward_message(bot, message, ADMIN_ID, LOG_CHANNEL_ID)
 
 
 # ========== تشغيل البوت ==========
