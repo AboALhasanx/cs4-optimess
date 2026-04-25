@@ -1,6 +1,5 @@
 import telebot
 import random
-import json
 import requests
 from telebot import apihelper
 apihelper.proxy = {'https': 'socks5h://127.0.0.1:9050'}
@@ -11,11 +10,7 @@ from config import (
     ADMIN_ID,
     BOT_TOKEN,
     cs_stg4,
-    cs_stg4_onefile,
-    cs_stg4_deleted,
-    cs_apps,
 )
-from app_paths import BUTTONS_PATH, VALUES_PATH
 from global_vars import (
     done_forward,
     not_post_yet,
@@ -81,29 +76,10 @@ from term2_keyboard import (
     com_skills_buttons,
     main_term_select,  # إن كنت تريد إظهار القائمة الرئيسية لاحقًا
 )
+from services.content_registry import ContentRegistry
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
-
-file_path = VALUES_PATH
-commands_file_path = BUTTONS_PATH
-
-
-def load_data(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        raise ValueError(f"Error: Invalid JSON in {file_path}")
-
-
-def load_commands(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        raise ValueError(f"Error: Invalid JSON in {file_path}")
-
-
+content_registry = ContentRegistry()
 
 # ========== تسجيل بيانات المستخدمين ==========
 FIREBASE_URL = "https://csbotproject-60ec6-default-rtdb.firebaseio.com/"
@@ -570,44 +546,28 @@ def return_to_main_menu(message):
     check_and_respond(message, respond)
 
 
-# ========== تحميل جدول الأوامر (buttons) من GitHub ==========
-button_to_command = load_commands(commands_file_path)
+# ========== تحميل جدول الأوامر (buttons) ==========
+button_to_command = content_registry.button_to_command
 
 
 @bot.message_handler(func=lambda msg: msg.text in button_to_command.keys())
 def handle_button(message):
     log_and_forward(message)
-    command = button_to_command.get(message.text)
+    command = content_registry.get_command_for_button(message.text)
     get_file_command(message, command)
 
 
 def get_file_command(message, command):
-    data = load_data(file_path)
-    post_id_or_list = data.get("commands", {}).get(command)
-    if "_full" in command:
-        CHANNEL_ID = cs_stg4
-    elif "_lectures" in command:
-        CHANNEL_ID = cs_stg4_onefile
-    elif "_old" in command:
-        CHANNEL_ID = cs_stg4_deleted
-    elif "_app" in command:
-        CHANNEL_ID = cs_apps
-    else:
+    target = content_registry.get_content_for_command(command)
+    if not target:
         bot.reply_to(message, not_post_yet)
         return
-    if post_id_or_list:
-        try:
-            if isinstance(post_id_or_list, list):
-                for post_id in post_id_or_list:
-                    bot.forward_message(message.chat.id, CHANNEL_ID, post_id)
-                bot.reply_to(message, done_forward)
-            else:
-                bot.forward_message(message.chat.id, CHANNEL_ID, post_id_or_list)
-                bot.reply_to(message, done_forward)
-        except Exception:
-            bot.reply_to(message, "اما تكون الرسالة ممسوحة من القنوات او غير موجودة🚫")
-    else:
-        bot.reply_to(message, not_post_yet)
+    try:
+        for post_id in target.message_ids:
+            bot.forward_message(message.chat.id, target.channel_id, post_id)
+        bot.reply_to(message, done_forward)
+    except Exception:
+        bot.reply_to(message, "اما تكون الرسالة ممسوحة من القنوات او غير موجودة🚫")
 
 
 # ========== تسجيل كل رسالة واردة وإرسالها للإدمن ==========
