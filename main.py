@@ -200,34 +200,9 @@ def broadcast(message):
     bot.reply_to(message, f"✅ تم إرسال البرودكاست إلى {count} مستخدم.")
 
 
-# ========== التحقق من الاشتراك بالقنوات ==========
-def is_user_member(user_id, chat_id):
-    try:
-        chat_member = bot.get_chat_member(chat_id, user_id)
-        return chat_member.status in ["member", "administrator", "creator"]
-    except Exception as e:
-        print(f"Error checking membership: {e}")
-        return False
-
-
+# ========== السماح المباشر بدون اشتراك إجباري ==========
 def check_and_respond(message, response_function, *args):
-    """دالة وسيطة تتأكد من اشتراك المستخدم بقنوات معينة قبل تنفيذ الدالة الفعلية (response_function)."""
-    user = message.from_user
-    first_name = user.first_name
-    user_id = user.id
-    required_channels = ["@cs_stg4"]
-    all_membership_valid = all(
-        is_user_member(user_id, channel) for channel in required_channels
-    )
-    if all_membership_valid:
-        response_function(message, *args)
-    else:
-        bot.send_message(
-            message.chat.id,
-            f"⤦ اوكف {first_name} شو ما مشترك بالقناة ⁉️🫣\n"
-            "اشترك وارجع اضغط على /start\n"
-            "• قناة الملازم: @cs_stg4\n",
-        )
+    response_function(message, *args)
 
 
 # ========== بدء المحادثة ==========
