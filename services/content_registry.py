@@ -2,7 +2,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from app_paths import BUTTONS_PATH, VALUES_PATH
+from app_paths import BUTTONS_PATH, DATA_DIR, VALUES_PATH
 from config import (
     CS_APPS_CHANNEL_ID,
     CS_STG4_CHANNEL_ID,
@@ -23,12 +23,19 @@ class ContentRegistry:
         self,
         buttons_path: Path = BUTTONS_PATH,
         values_path: Path = VALUES_PATH,
+        content_items_path: Path = DATA_DIR / "content_items.json",
     ) -> None:
         self.buttons_path = buttons_path
         self.values_path = values_path
-        self.button_to_command = self._load_json(buttons_path)
-        values_data = self._load_json(values_path)
-        self.command_to_values = values_data.get("commands", {})
+        self.content_items_path = content_items_path
+        self.content_items = []
+        self.command_to_channel_key = {}
+        if content_items_path.exists():
+            self._load_content_items(content_items_path)
+        else:
+            self.button_to_command = self._load_json(buttons_path)
+            values_data = self._load_json(values_path)
+            self.command_to_values = values_data.get("commands", {})
         self.validation_report = self.validate()
         self.print_validation_report()
 
@@ -37,6 +44,23 @@ class ContentRegistry:
             raise FileNotFoundError(f"Required content map is missing: {path}")
         with path.open("r", encoding="utf-8") as file:
             return json.load(file)
+
+    def _load_content_items(self, path: Path) -> None:
+        with path.open("r", encoding="utf-8") as file:
+            self.content_items = json.load(file)
+
+        self.button_to_command = {}
+        self.command_to_values = {}
+        for item in self.content_items:
+            if not item.get("active", True):
+                continue
+            button_label = item.get("button_label")
+            command_key = item.get("command_key")
+            if not button_label or not command_key:
+                continue
+            self.button_to_command[button_label] = command_key
+            self.command_to_values[command_key] = item.get("message_ids", [])
+            self.command_to_channel_key[command_key] = item.get("channel_key")
 
     def validate(self) -> dict[str, list[str]]:
         button_commands = set(self.button_to_command.values())
@@ -98,6 +122,15 @@ class ContentRegistry:
         )
 
     def get_channel_for_command(self, command_key: str) -> int | None:
+        channel_key = self.command_to_channel_key.get(command_key)
+        if channel_key:
+            return {
+                "CS_STG4_CHANNEL_ID": CS_STG4_CHANNEL_ID,
+                "CS_STG4_ONEFILE_CHANNEL_ID": CS_STG4_ONEFILE_CHANNEL_ID,
+                "CS_STG4_DELETED_CHANNEL_ID": CS_STG4_DELETED_CHANNEL_ID,
+                "CS_APPS_CHANNEL_ID": CS_APPS_CHANNEL_ID,
+            }.get(channel_key)
+
         # TODO: Replace suffix-based routing with explicit channel metadata.
         if "_full" in command_key:
             return CS_STG4_CHANNEL_ID
