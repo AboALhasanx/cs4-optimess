@@ -1,14 +1,14 @@
 import telebot
 import random
-import requests
 from telebot import apihelper
-apihelper.proxy = {'https': 'socks5h://127.0.0.1:9050'}
 
 
 from config import (
     LOG_CHANNEL_ID,
     ADMIN_ID,
     BOT_TOKEN,
+    FIREBASE_URL,
+    TELEGRAM_PROXY_URL,
     cs_stg4,
 )
 from global_vars import (
@@ -77,73 +77,32 @@ from term2_keyboard import (
 from services.content_registry import ContentRegistry
 from services.content_sender import send_content_for_command
 from services.message_logger import log_and_forward_message
+from services.users_service import (
+    deactivate_user as deactivate_firebase_user,
+    load_users as load_firebase_users,
+    log_user as log_firebase_user,
+)
+
+if TELEGRAM_PROXY_URL:
+    apihelper.proxy = {"https": TELEGRAM_PROXY_URL}
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
 content_registry = ContentRegistry()
 
 # ========== تسجيل بيانات المستخدمين ==========
-FIREBASE_URL = "https://csbotproject-60ec6-default-rtdb.firebaseio.com/"
 
 
 def log_user(message):
-    user_id = str(message.from_user.id)
-    current_data = {
-        "id": user_id,
-        "first_name": message.from_user.first_name or "NoName",
-        "username": (
-            f"@{message.from_user.username}"
-            if message.from_user.username
-            else "NoUsername"
-        ),
-    }
-    try:
-        response = requests.get(f"{FIREBASE_URL}/users/{user_id}.json")
-        if response.status_code == 200:
-            existing_data = response.json()
-            if not existing_data:
-                requests.put(f"{FIREBASE_URL}/users/{user_id}.json", json=current_data)
-                bot.send_message(
-                    ADMIN_ID,
-                    f"🆕 مستخدم جديد:\nID: {user_id}\nUsername: {current_data['username']}",
-                )
-            else:
-                if (
-                    existing_data.get("first_name") != current_data["first_name"]
-                    or existing_data.get("username") != current_data["username"]
-                ):
-                    requests.put(
-                        f"{FIREBASE_URL}/users/{user_id}.json", json=current_data
-                    )
-                    bot.send_message(
-                        ADMIN_ID,
-                        f"🔄 تم تحديث بيانات:\nID: {user_id}\nUsername: {current_data['username']}",
-                    )
-    except Exception as e:
-        print(f"خطأ في Firebase: {e}")
+    return log_firebase_user(bot, message, ADMIN_ID, FIREBASE_URL)
 
 
 def load_users():
-    try:
-        response = requests.get(f"{FIREBASE_URL}/users.json")
-        if response.status_code == 200:
-            return response.json() or {}
-    except Exception as e:
-        print(f"خطأ في جلب المستخدمين: {e}")
-    return {}
+    return load_firebase_users(FIREBASE_URL)
 
 
 # ========== أوامر الإذاعة =============
 def deactivate_user(uid):
-    """تقوم هذه الدالة بتحديث حالة المستخدم في قاعدة البيانات لتعتبره غير نشط (active=False) في حال لم يستجب للبوت (مثل حالة Forbidden)."""
-    try:
-        url = f"{FIREBASE_URL}/users/{uid}.json"
-        response = requests.patch(url, json={"active": False})
-        if response.status_code == 200:
-            print(f"تم تحديث حالة المستخدم {uid} إلى غير نشط.")
-        else:
-            print(f"فشل تحديث حالة المستخدم {uid}: {response.status_code}")
-    except Exception as ex:
-        print(f"حدث خطأ أثناء تحديث حالة المستخدم {uid}: {ex}")
+    return deactivate_firebase_user(uid, FIREBASE_URL)
 
 
 @bot.message_handler(commands=["bro"])
