@@ -1,0 +1,16 @@
+2025-05-07 19:49:52,148 - INFO - System performance monitoring started.
+2025-05-07 19:49:53,156 - INFO - CPU Usage: 45.7% | Memory Usage: 62.80% (Used: 7507.41MB / Total: 11951.43MB)
+2025-05-07 19:49:59,167 - INFO - CPU Usage: 6.2% | Memory Usage: 62.00% (Used: 7407.69MB / Total: 11951.43MB)
+2025-05-07 19:50:05,172 - INFO - CPU Usage: 11.3% | Memory Usage: 61.10% (Used: 7303.23MB / Total: 11951.43MB)
+2025-05-07 19:50:11,176 - INFO - CPU Usage: 10.9% | Memory Usage: 61.10% (Used: 7298.71MB / Total: 11951.43MB)
+2025-05-07 19:50:17,188 - INFO - CPU Usage: 3.5% | Memory Usage: 61.00% (Used: 7295.90MB / Total: 11951.43MB)
+2025-05-07 19:50:23,199 - INFO - CPU Usage: 13.1% | Memory Usage: 61.00% (Used: 7287.36MB / Total: 11951.43MB)
+2025-05-07 19:50:29,211 - INFO - CPU Usage: 16.9% | Memory Usage: 60.60% (Used: 7240.15MB / Total: 11951.43MB)
+2025-05-07 19:50:35,225 - INFO - CPU Usage: 1.6% | Memory Usage: 60.50% (Used: 7232.62MB / Total: 11951.43MB)
+2025-05-07 19:50:41,235 - INFO - CPU Usage: 15.2% | Memory Usage: 60.50% (Used: 7231.02MB / Total: 11951.43MB)
+2025-05-07 19:50:47,240 - INFO - CPU Usage: 33.1% | Memory Usage: 60.50% (Used: 7233.51MB / Total: 11951.43MB)
+2025-05-07 19:50:53,252 - INFO - CPU Usage: 9.8% | Memory Usage: 60.30% (Used: 7212.33MB / Total: 11951.43MB)
+2025-05-07 19:50:59,265 - INFO - CPU Usage: 5.1% | Memory Usage: 60.30% (Used: 7212.36MB / Total: 11951.43MB)
+2025-05-07 19:51:05,273 - INFO - CPU Usage: 1.6% | Memory Usage: 60.40% (Used: 7215.14MB / Total: 11951.43MB)
+2025-05-07 19:51:11,285 - INFO - CPU Usage: 3.9% | Memory Usage: 60.40% (Used: 7217.90MB / Total: 11951.43MB)
+2025-05-07 19:51:16,286 - INFO - System performance monitoring stopped by user.
