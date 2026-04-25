@@ -16,6 +16,7 @@ from config import (
     cs_stg4_deleted,
     cs_apps,
 )
+from app_paths import BUTTONS_PATH, VALUES_PATH
 from global_vars import (
     done_forward,
     not_post_yet,
@@ -86,32 +87,24 @@ from term2_keyboard import (
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
 
-file_path = "/storage/emulated/0/csbot/cs4/terms_cmd2values.json"
-commands_file_path = "/storage/emulated/0/csbot/cs4/terms_btn2cmd.json"
+file_path = VALUES_PATH
+commands_file_path = BUTTONS_PATH
 
 
 def load_data(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FileNotFoundError:
-        print(f"Error: File {file_path} not found")
-        return {}
     except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in {file_path}")
-        return {}
+        raise ValueError(f"Error: Invalid JSON in {file_path}")
 
 
 def load_commands(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FileNotFoundError:
-        print(f"Error: File {file_path} not found")
-        return {}
     except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in {file_path}")
-        return {}
+        raise ValueError(f"Error: Invalid JSON in {file_path}")
 
 
 
