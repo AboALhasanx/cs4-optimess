@@ -1,4 +1,5 @@
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+from keyboard_utils import build_keyboard
 
 from global_vars import (
     graduation,
@@ -17,16 +18,14 @@ from global_vars import (
 
 
 def main_term_select():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    button1 = KeyboardButton("الكورس الأول")
-    button2 = KeyboardButton("الكورس الثاني")
-    button3 = KeyboardButton("تقييم البوت")
-    button4 = KeyboardButton("🪧 عن البوت 🪧")
-    markup.add(button1)
-    markup.add(button2)
-    markup.add(button3)
-    markup.add(button4)
-    return markup
+    return build_keyboard(
+        [
+            ["الكورس الأول"],
+            ["الكورس الثاني"],
+            ["تقييم البوت"],
+            ["🪧 عن البوت 🪧"],
+        ]
+    )
 
 
 def main_term2_keyboard():
@@ -66,11 +65,7 @@ def give_rating():
         "تحجي صدك 🦦؟",
         "خروج من التقييم",
     ]
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    for text in button_text:
-        button = KeyboardButton(text)
-        markup.add(button)
-    return markup
+    return build_keyboard([[text] for text in button_text])
 
 
 def graduation_keys():

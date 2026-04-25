@@ -1,4 +1,5 @@
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+from keyboard_utils import build_keyboard
 from global_vars import (
     graduation,
     back_term2,
@@ -59,11 +60,7 @@ def graduation_keys():
         "عناوين مشاريع التخرج لسنة 2024-2025",
         back_term2,
     ]
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    for text in button_texts:
-        button = KeyboardButton(text)
-        markup.add(button)
-    return markup
+    return build_keyboard([[text] for text in button_texts])
 
 
 def web_prog_buttons():
