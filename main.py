@@ -12,8 +12,6 @@ from config import (
     cs_stg4,
 )
 from global_vars import (
-    done_forward,
-    not_post_yet,
     about_bot_msg,
     graduation,
     # كورس أول:
@@ -77,6 +75,7 @@ from term2_keyboard import (
     main_term_select,  # إن كنت تريد إظهار القائمة الرئيسية لاحقًا
 )
 from services.content_registry import ContentRegistry
+from services.content_sender import send_content_for_command
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
 content_registry = ContentRegistry()
@@ -558,16 +557,7 @@ def handle_button(message):
 
 
 def get_file_command(message, command):
-    target = content_registry.get_content_for_command(command)
-    if not target:
-        bot.reply_to(message, not_post_yet)
-        return
-    try:
-        for post_id in target.message_ids:
-            bot.forward_message(message.chat.id, target.channel_id, post_id)
-        bot.reply_to(message, done_forward)
-    except Exception:
-        bot.reply_to(message, "اما تكون الرسالة ممسوحة من القنوات او غير موجودة🚫")
+    send_content_for_command(bot, message, content_registry, command)
 
 
 # ========== تسجيل كل رسالة واردة وإرسالها للإدمن ==========
