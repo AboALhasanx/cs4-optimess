@@ -6,7 +6,6 @@ from telebot import apihelper
 apihelper.proxy = {'https': 'socks5h://127.0.0.1:9050'}
 
 
-from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import (
     LOG_CHANNEL_ID,
     ADMIN_ID,
@@ -75,13 +74,11 @@ from term2_keyboard import (
     cloud_computing_theo_buttons,
     design_and_analyze_systems_lab_buttons,
     design_and_analyze_systems_theo_buttons,
-    mobApp_quiz_menu_buttons,
     mobile_applications_theo_buttons,
     iot_lab_buttons,
     iot_theo_buttons,
     english_buttons,
     com_skills_buttons,
-    iot_quiz_menu_buttons,
     main_term_select,  # إن كنت تريد إظهار القائمة الرئيسية لاحقًا
 )
 
@@ -520,82 +517,6 @@ def mobile_theo_redirect(message):
     check_and_respond(message, respond)
 
 
-# -----------------------------------------------------------------------------------
-# ========== اختبارات الكوزات تطبيقات الموبايل==========
-from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
-
-
-def send_miniapp_button(message):
-    # ننشئ لوحة الأزرار
-    kb = InlineKeyboardMarkup()
-    # هنا نستخدم WebAppInfo لتمرير رابط الـ Web App
-    btn = InlineKeyboardButton(
-        text="اضغط هنا للانتقال إلى الاختبار 🚀",
-        web_app=WebAppInfo(
-            url="https://aboalhasanx.github.io/des-quiz/preliminary.html"
-        ),
-    )
-    kb.add(btn)
-    bot.send_message(
-        message.chat.id, "لمحاكاة ورقة الامتحان، اضغط على الزر:", reply_markup=kb
-    )
-
-
-@bot.message_handler(func=lambda m: m.text == "▶️ محاكاة ورقة الامتحان 📄")
-def handle_start_des(m):
-    log_and_forward(m)
-    send_miniapp_button(m)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "📱 اختبارات كوزات 📝")
-def handle_quiz_mobApp_menu(message):
-    log_and_forward(message)
-    bot.send_message(
-        message.chat.id, "جاهز للتحدي؟ 😎", reply_markup=mobApp_quiz_menu_buttons()
-    )
-
-
-@bot.message_handler(func=lambda msg: msg.text == "▶️ بدء الاختبار 📱")
-def start_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import start_mobApp_test
-
-    start_mobApp_test(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "🎲 سؤال عشوائي 📱")
-def random_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import random_mobApp_question
-
-    random_mobApp_question(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "⏹️ خروج من الاختبار 📱")
-def exit_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import quit_quiz
-
-    quit_quiz(bot, message, mobile_applications_theo_buttons, chose_from_markup)
-
-
-@bot.poll_answer_handler()
-def on_poll_answer(poll_answer):
-    from mobApp_quiz import handle_poll_answer
-
-    handle_poll_answer(bot, poll_answer)
-
-
-@bot.callback_query_handler(func=lambda call: call.data == "next_mobApp")
-def handle_next_q(call):
-    from mobApp_quiz import next_mobApp_handler
-
-    next_mobApp_handler(bot, call)
-
-
-# -----------------------------------------------------------------------------------
-
-
 @bot.message_handler(func=lambda msg: msg.text == iot_lab_title)
 def iot_lab_redirect(message):
     log_and_forward(message)
@@ -614,56 +535,6 @@ def iot_theo_redirect(message):
         chose_from_markup(msg, iot_theo_buttons())
 
     check_and_respond(message, respond)
-
-
-# ======================= اختبارات الكوزات إنترنت الأشياء =========================
-@bot.message_handler(func=lambda msg: msg.text == "🦾 اختبارات كوزات 📝")
-def handle_quiz_iot_menu(message):
-    log_and_forward(message)
-    bot.send_message(
-        message.chat.id, "جاهز للتحدي؟ 😎", reply_markup=iot_quiz_menu_buttons()
-    )
-
-
-@bot.message_handler(func=lambda msg: msg.text == "▶️ بدء الاختبار 🦾")
-def start_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import start_iot_test
-
-    start_iot_test(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "🎲 سؤال عشوائي 🦾")
-def random_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import random_iot_question
-
-    random_iot_question(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "⏹️ خروج من الاختبار 🦾")
-def exit_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import quit_quiz
-
-    quit_quiz(bot, message, iot_theo_buttons, chose_from_markup)
-
-
-@bot.poll_answer_handler()
-def on_poll_answer(poll_answer):
-    from iot_quiz import handle_poll_answer
-
-    handle_poll_answer(bot, poll_answer)
-
-
-@bot.callback_query_handler(func=lambda call: call.data == "next_iot")
-def handle_next_q(call):
-    from iot_quiz import next_iot_handler
-
-    next_iot_handler(bot, call)
-
-
-# ------------------------------------------------------------------------------------
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_lab_title)

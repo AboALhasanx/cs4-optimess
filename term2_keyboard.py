@@ -159,7 +159,6 @@ def design_and_analyze_systems_lab_buttons():
 def mobile_applications_theo_buttons():
     button_texts = [
         "📱 المحاضرات في ملف واحد كاملة 📁",
-        "📱 اختبارات كوزات 📝",
         "📱 ملخصات وتوضيحات 📝",
         "📱 اسئلة وحلول 📝",
         "📱 البرنامج الي نطبق عليه Flutter 💻",
@@ -180,7 +179,6 @@ def iot_theo_buttons():
         "🦾 كل جابتر في ملف 🗂",
         "🦾 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
         "🦾 كل جابتر مترجم في ملف 🇮🇶",
-        "🦾 اختبارات كوزات 📝",
         "🦾 ملخصات وتوضيحات 📝",
         "🦾 اسئلة وحلول 📝",
         "🦾 محاضرات السنة السابقة 🕐",
@@ -206,24 +204,6 @@ def iot_lab_buttons():
     for text in button_texts:
         button = KeyboardButton(text)
         markup.add(button)
-    return markup
-
-
-def iot_quiz_menu_buttons():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(KeyboardButton("▶️ محاكاة ورقة الامتحان 📄"))
-    markup.add(KeyboardButton("▶️ بدء الاختبار 🦾"))
-    markup.add(KeyboardButton("🎲 سؤال عشوائي 🦾"))
-    markup.add(KeyboardButton("⏹️ خروج من الاختبار 🦾"))
-    return markup
-
-
-def mobApp_quiz_menu_buttons():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(KeyboardButton("▶️ محاكاة ورقة الامتحان 📄"))
-    markup.add(KeyboardButton("▶️ بدء الاختبار 📱"))
-    markup.add(KeyboardButton("🎲 سؤال عشوائي 📱"))
-    markup.add(KeyboardButton("⏹️ خروج من الاختبار 📱"))
     return markup
 
 
