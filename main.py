@@ -135,11 +135,6 @@ def broadcast(message):
     bot.reply_to(message, f"✅ تم إرسال البرودكاست إلى {count} مستخدم.")
 
 
-# ========== السماح المباشر بدون اشتراك إجباري ==========
-def check_and_respond(message, response_function, *args):
-    response_function(message, *args)
-
-
 # ========== بدء المحادثة ==========
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
@@ -157,7 +152,7 @@ def send_welcome(message):
             msg, welcome_text, parse_mode="HTML", reply_markup=main_term_select()
         )
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 def chose_from_markup(message, reply_markup):
@@ -242,7 +237,7 @@ def to_term1_menu(message):
     def respond(msg):
         chose_from_markup(msg, main_term1_keyboard())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == graduation)
@@ -252,7 +247,7 @@ def graduation_redirect(message):
     def respond(msg):
         chose_from_markup(msg, graduation_keys())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == computer_security_lab_title)
@@ -262,7 +257,7 @@ def comp_sec_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, computer_security_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == computer_security_theo_title)
@@ -272,7 +267,7 @@ def comp_sec_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, computer_security_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == image_process_lab_title)
@@ -282,7 +277,7 @@ def img_proc_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, image_process_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == image_process_theo_title)
@@ -292,7 +287,7 @@ def img_proc_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, image_process_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == operation_systems_lab_title)
@@ -302,7 +297,7 @@ def op_sys_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, operation_systems_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == operation_systems_theo_title)
@@ -312,7 +307,7 @@ def op_sys_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, operation_systems_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == algo_lab_title)
@@ -322,7 +317,7 @@ def algo_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, algo_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == algo_theo_title)
@@ -332,7 +327,7 @@ def algo_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, algo_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == dis_systems_lab_title)
@@ -342,7 +337,7 @@ def dis_sys_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, dis_systems_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == dis_systems_theo_title)
@@ -352,7 +347,7 @@ def dis_sys_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, dis_systems_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == web_prog_title)
@@ -362,7 +357,7 @@ def web_prog_redirect(message):
     def respond(msg):
         chose_from_markup(msg, web_prog_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 # ========== الكورس الثاني ==========
@@ -374,7 +369,7 @@ def to_term2_menu(message):
     def respond(msg):
         chose_from_markup(msg, main_term2_keyboard())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == english_title)
@@ -384,7 +379,7 @@ def english_redirect(message):
     def respond(msg):
         chose_from_markup(msg, english_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == cloud_computing_lab_title)
@@ -394,7 +389,7 @@ def cloud_comp_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, cloud_computing_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == cloud_computing_theo_title)
@@ -404,7 +399,7 @@ def cloud_comp_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, cloud_computing_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == mobile_applications_theo_title)
@@ -414,7 +409,7 @@ def mobile_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, mobile_applications_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == iot_lab_title)
@@ -424,7 +419,7 @@ def iot_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, iot_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == iot_theo_title)
@@ -434,7 +429,7 @@ def iot_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, iot_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_lab_title)
@@ -444,7 +439,7 @@ def das_lab_redirect(message):
     def respond(msg):
         chose_from_markup(msg, design_and_analyze_systems_lab_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_theo_title)
@@ -454,7 +449,7 @@ def das_theo_redirect(message):
     def respond(msg):
         chose_from_markup(msg, design_and_analyze_systems_theo_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 @bot.message_handler(func=lambda msg: msg.text == com_skills_title)
@@ -464,7 +459,7 @@ def com_skills_redirect(message):
     def respond(msg):
         chose_from_markup(msg, com_skills_buttons())
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 # زرّ القائمة الرئيسية أو الخروج من التقييم
@@ -482,7 +477,7 @@ def return_to_main_menu(message):
             reply_markup=main_term_select(),
         )
 
-    check_and_respond(message, respond)
+    respond(message)
 
 
 # ========== تحميل جدول الأوامر (buttons) ==========
