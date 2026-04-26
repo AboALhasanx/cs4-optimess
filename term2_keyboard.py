@@ -1,4 +1,5 @@
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+from keyboard_utils import build_keyboard
 
 from global_vars import (
     graduation,
@@ -17,16 +18,14 @@ from global_vars import (
 
 
 def main_term_select():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    button1 = KeyboardButton("الكورس الأول")
-    button2 = KeyboardButton("الكورس الثاني")
-    button3 = KeyboardButton("تقييم البوت")
-    button4 = KeyboardButton("🪧 عن البوت 🪧")
-    markup.add(button1)
-    markup.add(button2)
-    markup.add(button3)
-    markup.add(button4)
-    return markup
+    return build_keyboard(
+        [
+            ["الكورس الأول"],
+            ["الكورس الثاني"],
+            ["تقييم البوت"],
+            ["🪧 عن البوت 🪧"],
+        ]
+    )
 
 
 def main_term2_keyboard():
@@ -66,11 +65,7 @@ def give_rating():
         "تحجي صدك 🦦؟",
         "خروج من التقييم",
     ]
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    for text in button_text:
-        button = KeyboardButton(text)
-        markup.add(button)
-    return markup
+    return build_keyboard([[text] for text in button_text])
 
 
 def graduation_keys():
@@ -159,7 +154,6 @@ def design_and_analyze_systems_lab_buttons():
 def mobile_applications_theo_buttons():
     button_texts = [
         "📱 المحاضرات في ملف واحد كاملة 📁",
-        "📱 اختبارات كوزات 📝",
         "📱 ملخصات وتوضيحات 📝",
         "📱 اسئلة وحلول 📝",
         "📱 البرنامج الي نطبق عليه Flutter 💻",
@@ -180,7 +174,6 @@ def iot_theo_buttons():
         "🦾 كل جابتر في ملف 🗂",
         "🦾 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
         "🦾 كل جابتر مترجم في ملف 🇮🇶",
-        "🦾 اختبارات كوزات 📝",
         "🦾 ملخصات وتوضيحات 📝",
         "🦾 اسئلة وحلول 📝",
         "🦾 محاضرات السنة السابقة 🕐",
@@ -206,24 +199,6 @@ def iot_lab_buttons():
     for text in button_texts:
         button = KeyboardButton(text)
         markup.add(button)
-    return markup
-
-
-def iot_quiz_menu_buttons():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(KeyboardButton("▶️ محاكاة ورقة الامتحان 📄"))
-    markup.add(KeyboardButton("▶️ بدء الاختبار 🦾"))
-    markup.add(KeyboardButton("🎲 سؤال عشوائي 🦾"))
-    markup.add(KeyboardButton("⏹️ خروج من الاختبار 🦾"))
-    return markup
-
-
-def mobApp_quiz_menu_buttons():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(KeyboardButton("▶️ محاكاة ورقة الامتحان 📄"))
-    markup.add(KeyboardButton("▶️ بدء الاختبار 📱"))
-    markup.add(KeyboardButton("🎲 سؤال عشوائي 📱"))
-    markup.add(KeyboardButton("⏹️ خروج من الاختبار 📱"))
     return markup
 
 

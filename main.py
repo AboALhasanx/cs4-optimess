@@ -1,24 +1,17 @@
 import telebot
 import random
-import json
-import requests
 from telebot import apihelper
-apihelper.proxy = {'https': 'socks5h://127.0.0.1:9050'}
 
 
-from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import (
     LOG_CHANNEL_ID,
     ADMIN_ID,
     BOT_TOKEN,
+    FIREBASE_URL,
+    TELEGRAM_PROXY_URL,
     cs_stg4,
-    cs_stg4_onefile,
-    cs_stg4_deleted,
-    cs_apps,
 )
 from global_vars import (
-    done_forward,
-    not_post_yet,
     about_bot_msg,
     graduation,
     # كورس أول:
@@ -74,110 +67,42 @@ from term2_keyboard import (
     cloud_computing_theo_buttons,
     design_and_analyze_systems_lab_buttons,
     design_and_analyze_systems_theo_buttons,
-    mobApp_quiz_menu_buttons,
     mobile_applications_theo_buttons,
     iot_lab_buttons,
     iot_theo_buttons,
     english_buttons,
     com_skills_buttons,
-    iot_quiz_menu_buttons,
     main_term_select,  # إن كنت تريد إظهار القائمة الرئيسية لاحقًا
 )
+from services.content_registry import ContentRegistry
+from services.content_sender import send_content_for_command
+from services.message_logger import log_and_forward_message
+from services.users_service import (
+    deactivate_user as deactivate_firebase_user,
+    load_users as load_firebase_users,
+    log_user as log_firebase_user,
+)
+
+if TELEGRAM_PROXY_URL:
+    apihelper.proxy = {"https": TELEGRAM_PROXY_URL}
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
-
-file_path = "/storage/emulated/0/csbot/cs4/terms_cmd2values.json"
-commands_file_path = "/storage/emulated/0/csbot/cs4/terms_btn2cmd.json"
-
-
-def load_data(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print(f"Error: File {file_path} not found")
-        return {}
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in {file_path}")
-        return {}
-
-
-def load_commands(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print(f"Error: File {file_path} not found")
-        return {}
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in {file_path}")
-        return {}
-
-
+content_registry = ContentRegistry()
 
 # ========== تسجيل بيانات المستخدمين ==========
-FIREBASE_URL = "https://csbotproject-60ec6-default-rtdb.firebaseio.com/"
 
 
 def log_user(message):
-    user_id = str(message.from_user.id)
-    current_data = {
-        "id": user_id,
-        "first_name": message.from_user.first_name or "NoName",
-        "username": (
-            f"@{message.from_user.username}"
-            if message.from_user.username
-            else "NoUsername"
-        ),
-    }
-    try:
-        response = requests.get(f"{FIREBASE_URL}/users/{user_id}.json")
-        if response.status_code == 200:
-            existing_data = response.json()
-            if not existing_data:
-                requests.put(f"{FIREBASE_URL}/users/{user_id}.json", json=current_data)
-                bot.send_message(
-                    ADMIN_ID,
-                    f"🆕 مستخدم جديد:\nID: {user_id}\nUsername: {current_data['username']}",
-                )
-            else:
-                if (
-                    existing_data.get("first_name") != current_data["first_name"]
-                    or existing_data.get("username") != current_data["username"]
-                ):
-                    requests.put(
-                        f"{FIREBASE_URL}/users/{user_id}.json", json=current_data
-                    )
-                    bot.send_message(
-                        ADMIN_ID,
-                        f"🔄 تم تحديث بيانات:\nID: {user_id}\nUsername: {current_data['username']}",
-                    )
-    except Exception as e:
-        print(f"خطأ في Firebase: {e}")
+    return log_firebase_user(bot, message, ADMIN_ID, FIREBASE_URL)
 
 
 def load_users():
-    try:
-        response = requests.get(f"{FIREBASE_URL}/users.json")
-        if response.status_code == 200:
-            return response.json() or {}
-    except Exception as e:
-        print(f"خطأ في جلب المستخدمين: {e}")
-    return {}
+    return load_firebase_users(FIREBASE_URL)
 
 
 # ========== أوامر الإذاعة =============
 def deactivate_user(uid):
-    """تقوم هذه الدالة بتحديث حالة المستخدم في قاعدة البيانات لتعتبره غير نشط (active=False) في حال لم يستجب للبوت (مثل حالة Forbidden)."""
-    try:
-        url = f"{FIREBASE_URL}/users/{uid}.json"
-        response = requests.patch(url, json={"active": False})
-        if response.status_code == 200:
-            print(f"تم تحديث حالة المستخدم {uid} إلى غير نشط.")
-        else:
-            print(f"فشل تحديث حالة المستخدم {uid}: {response.status_code}")
-    except Exception as ex:
-        print(f"حدث خطأ أثناء تحديث حالة المستخدم {uid}: {ex}")
+    return deactivate_firebase_user(uid, FIREBASE_URL)
 
 
 @bot.message_handler(commands=["bro"])
@@ -210,34 +135,9 @@ def broadcast(message):
     bot.reply_to(message, f"✅ تم إرسال البرودكاست إلى {count} مستخدم.")
 
 
-# ========== التحقق من الاشتراك بالقنوات ==========
-def is_user_member(user_id, chat_id):
-    try:
-        chat_member = bot.get_chat_member(chat_id, user_id)
-        return chat_member.status in ["member", "administrator", "creator"]
-    except Exception as e:
-        print(f"Error checking membership: {e}")
-        return False
-
-
+# ========== السماح المباشر بدون اشتراك إجباري ==========
 def check_and_respond(message, response_function, *args):
-    """دالة وسيطة تتأكد من اشتراك المستخدم بقنوات معينة قبل تنفيذ الدالة الفعلية (response_function)."""
-    user = message.from_user
-    first_name = user.first_name
-    user_id = user.id
-    required_channels = ["@cs_stg4"]
-    all_membership_valid = all(
-        is_user_member(user_id, channel) for channel in required_channels
-    )
-    if all_membership_valid:
-        response_function(message, *args)
-    else:
-        bot.send_message(
-            message.chat.id,
-            f"⤦ اوكف {first_name} شو ما مشترك بالقناة ⁉️🫣\n"
-            "اشترك وارجع اضغط على /start\n"
-            "• قناة الملازم: @cs_stg4\n",
-        )
+    response_function(message, *args)
 
 
 # ========== بدء المحادثة ==========
@@ -527,82 +427,6 @@ def mobile_theo_redirect(message):
     check_and_respond(message, respond)
 
 
-# -----------------------------------------------------------------------------------
-# ========== اختبارات الكوزات تطبيقات الموبايل==========
-from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
-
-
-def send_miniapp_button(message):
-    # ننشئ لوحة الأزرار
-    kb = InlineKeyboardMarkup()
-    # هنا نستخدم WebAppInfo لتمرير رابط الـ Web App
-    btn = InlineKeyboardButton(
-        text="اضغط هنا للانتقال إلى الاختبار 🚀",
-        web_app=WebAppInfo(
-            url="https://aboalhasanx.github.io/des-quiz/preliminary.html"
-        ),
-    )
-    kb.add(btn)
-    bot.send_message(
-        message.chat.id, "لمحاكاة ورقة الامتحان، اضغط على الزر:", reply_markup=kb
-    )
-
-
-@bot.message_handler(func=lambda m: m.text == "▶️ محاكاة ورقة الامتحان 📄")
-def handle_start_des(m):
-    log_and_forward(m)
-    send_miniapp_button(m)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "📱 اختبارات كوزات 📝")
-def handle_quiz_mobApp_menu(message):
-    log_and_forward(message)
-    bot.send_message(
-        message.chat.id, "جاهز للتحدي؟ 😎", reply_markup=mobApp_quiz_menu_buttons()
-    )
-
-
-@bot.message_handler(func=lambda msg: msg.text == "▶️ بدء الاختبار 📱")
-def start_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import start_mobApp_test
-
-    start_mobApp_test(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "🎲 سؤال عشوائي 📱")
-def random_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import random_mobApp_question
-
-    random_mobApp_question(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "⏹️ خروج من الاختبار 📱")
-def exit_quiz_mobApp(message):
-    log_and_forward(message)
-    from mobApp_quiz import quit_quiz
-
-    quit_quiz(bot, message, mobile_applications_theo_buttons, chose_from_markup)
-
-
-@bot.poll_answer_handler()
-def on_poll_answer(poll_answer):
-    from mobApp_quiz import handle_poll_answer
-
-    handle_poll_answer(bot, poll_answer)
-
-
-@bot.callback_query_handler(func=lambda call: call.data == "next_mobApp")
-def handle_next_q(call):
-    from mobApp_quiz import next_mobApp_handler
-
-    next_mobApp_handler(bot, call)
-
-
-# -----------------------------------------------------------------------------------
-
-
 @bot.message_handler(func=lambda msg: msg.text == iot_lab_title)
 def iot_lab_redirect(message):
     log_and_forward(message)
@@ -621,56 +445,6 @@ def iot_theo_redirect(message):
         chose_from_markup(msg, iot_theo_buttons())
 
     check_and_respond(message, respond)
-
-
-# ======================= اختبارات الكوزات إنترنت الأشياء =========================
-@bot.message_handler(func=lambda msg: msg.text == "🦾 اختبارات كوزات 📝")
-def handle_quiz_iot_menu(message):
-    log_and_forward(message)
-    bot.send_message(
-        message.chat.id, "جاهز للتحدي؟ 😎", reply_markup=iot_quiz_menu_buttons()
-    )
-
-
-@bot.message_handler(func=lambda msg: msg.text == "▶️ بدء الاختبار 🦾")
-def start_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import start_iot_test
-
-    start_iot_test(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "🎲 سؤال عشوائي 🦾")
-def random_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import random_iot_question
-
-    random_iot_question(bot, message)
-
-
-@bot.message_handler(func=lambda msg: msg.text == "⏹️ خروج من الاختبار 🦾")
-def exit_quiz_iot(message):
-    log_and_forward(message)
-    from iot_quiz import quit_quiz
-
-    quit_quiz(bot, message, iot_theo_buttons, chose_from_markup)
-
-
-@bot.poll_answer_handler()
-def on_poll_answer(poll_answer):
-    from iot_quiz import handle_poll_answer
-
-    handle_poll_answer(bot, poll_answer)
-
-
-@bot.callback_query_handler(func=lambda call: call.data == "next_iot")
-def handle_next_q(call):
-    from iot_quiz import next_iot_handler
-
-    next_iot_handler(bot, call)
-
-
-# ------------------------------------------------------------------------------------
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_lab_title)
@@ -731,44 +505,19 @@ def return_to_main_menu(message):
     check_and_respond(message, respond)
 
 
-# ========== تحميل جدول الأوامر (buttons) من GitHub ==========
-button_to_command = load_commands(commands_file_path)
+# ========== تحميل جدول الأوامر (buttons) ==========
+button_to_command = content_registry.button_to_command
 
 
 @bot.message_handler(func=lambda msg: msg.text in button_to_command.keys())
 def handle_button(message):
     log_and_forward(message)
-    command = button_to_command.get(message.text)
+    command = content_registry.get_command_for_button(message.text)
     get_file_command(message, command)
 
 
 def get_file_command(message, command):
-    data = load_data(file_path)
-    post_id_or_list = data.get("commands", {}).get(command)
-    if "_full" in command:
-        CHANNEL_ID = cs_stg4
-    elif "_lectures" in command:
-        CHANNEL_ID = cs_stg4_onefile
-    elif "_old" in command:
-        CHANNEL_ID = cs_stg4_deleted
-    elif "_app" in command:
-        CHANNEL_ID = cs_apps
-    else:
-        bot.reply_to(message, not_post_yet)
-        return
-    if post_id_or_list:
-        try:
-            if isinstance(post_id_or_list, list):
-                for post_id in post_id_or_list:
-                    bot.forward_message(message.chat.id, CHANNEL_ID, post_id)
-                bot.reply_to(message, done_forward)
-            else:
-                bot.forward_message(message.chat.id, CHANNEL_ID, post_id_or_list)
-                bot.reply_to(message, done_forward)
-        except Exception:
-            bot.reply_to(message, "اما تكون الرسالة ممسوحة من القنوات او غير موجودة🚫")
-    else:
-        bot.reply_to(message, not_post_yet)
+    send_content_for_command(bot, message, content_registry, command)
 
 
 # ========== تسجيل كل رسالة واردة وإرسالها للإدمن ==========
@@ -799,38 +548,7 @@ def get_file_command(message, command):
     ],
 )
 def log_and_forward(message):
-    user_id = message.from_user.id
-    username = message.from_user.username or "NoUsername"
-    first_name = message.from_user.first_name or ""
-    last_name = message.from_user.last_name or ""
-    full_name = (first_name + " " + last_name).strip()
-
-    log_msg = (
-        f"👤 رسالة جديدة:\n"
-        f"• الاسم: {full_name}\n"
-        f"• اليوزر: @{username}\n"
-        f"• الايدي: {user_id}\n"
-        f"• نوع الرسالة: {message.content_type}\n"
-    )
-
-    if user_id != ADMIN_ID:
-        sent = bot.send_message(LOG_CHANNEL_ID, log_msg)
-
-        # لو الرسالة نصية نرسلها كرد على رسالة التفاصيل
-        if message.content_type == "text":
-            bot.send_message(
-                LOG_CHANNEL_ID, message.text, reply_to_message_id=sent.message_id
-            )
-        else:
-            # للملفات والأنواع الأخرى فقط نعيد توجيه الرسالة (بدون رد)
-            try:
-                bot.forward_message(
-                    chat_id=LOG_CHANNEL_ID,
-                    from_chat_id=message.chat.id,
-                    message_id=message.message_id,
-                )
-            except Exception as e:
-                print(f"خطأ في إعادة توجيه الرسالة إلى القناة: {e}")
+    log_and_forward_message(bot, message, ADMIN_ID, LOG_CHANNEL_ID)
 
 
 # ========== تشغيل البوت ==========

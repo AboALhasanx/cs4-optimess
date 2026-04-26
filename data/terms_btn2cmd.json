@@ -1,0 +1,194 @@
+
+
+{
+        "🌐 المادة في ملف واحد كاملة 📁": "webprogramming__old",
+        "🌐 ملخصات وتوضيحات 📝": "webprogramming_summarize_lectures",
+        "🌐 اسئلة وحلول 📝": "webprogramming_qa_lectures",
+        "🌐 البرنامج الي نطبق عليه (VS Code) + (XAMPP) 💻": "webprogramming_app",
+
+
+
+        "📈 المادة في ملف واحد كاملة 📁":"algo_lab__old",
+        "📈 كل جابتر  بملف 🗂":"algo_lab_lectures",
+        "📈 مادة السنة السابقة 🕐":"algo_lab_old",
+        "📈 البرنامج الي نطبق عليه Dev C++ 💻":"algo_lab_app",
+
+        "📈 المحاضرات في ملف واحد كاملة 📁":"algo_theo__old",
+        "📈 كل جابتر في ملف 🗂":"algo_theo_lectures",
+        "📈 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"algo_theo_ar_all_lectures",
+        "📈 كل جابتر مترجم في ملف 🇮🇶":"algo_theo_ar_lectures",
+        "📈 ملخصات وتوضيحات 📝":"algo_theo_summarize_lectures",
+        "📈 اسئلة وحلول 📝":"algo_theo_qa_lectures",
+        "📈 محاضرات السنة السابقة 🕐":"algo_theo_old",
+        "📈 ملحقات عشوائية من السنة السابقة 🕐": "algo_theo_adds_lectures",
+
+
+
+
+        "🛡️ المادة في ملف واحد كاملة 📁":"computer_security_lab__old",
+        "🛡️ كل جابتر  بملف 🗂":"computer_security_lab_lectures",
+        "🛡️ مادة السنة السابقة 🕐":"computer_security_lab_old",
+        "🛡️ البرنامج الي نطبق عليه Jupyter 💻":"computer_security_lab_app",
+
+        "🛡️ المحاضرات في ملف واحد كاملة 📁":"computer_security_theo__old",
+        "🛡️ كل جابتر في ملف 🗂":"computer_security_theo_lectures",
+        "🛡️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"computer_security_theo_ar_all_lectures",
+        "🛡️ كل جابتر مترجم في ملف 🇮🇶":"computer_security_theo_ar_lectures",
+        "🛡️ ملخصات وتوضيحات 📝":"computer_security_theo_summarize_lectures",
+        "🛡️ اسئلة وحلول 📝":"computer_security_theo_qa_lectures",
+        "🛡️ محاضرات السنة السابقة 🕐":"computer_security_theo_old",
+        "🛡️ ملحقات عشوائية من السنة السابقة 🕐": "computer_security_theo_adds_lectures",
+
+
+
+
+        "🐧 المادة في ملف واحد كاملة 📁":"operation_systems_lab__old",
+        "🐧 كل جابتر بملف 🗂":"operation_systems_lab_lectures",
+        "🐧 مادة السنة السابقة 🕐":"operation_systems_lab_old",
+        "🐧 البرامج الي نطبق عليها Dev C++ 💻":"operation_systems_lab_app",
+        "🐧 ملحقـات عشوائية من السنة السابقة 🕐": "operation_systems_lab_adds_lectures",
+
+        "🐧 المحاضرات في ملف واحد كاملة 📁":"operation_systems_theo__old",
+        "🐧 كل جابتر في ملف 🗂":"operation_systems_theo_lectures",
+        "🐧 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"operation_systems_theo_ar_all_lectures",
+        "🐧 كل جابتر مترجم في ملف 🇮🇶":"operation_systems_theo_ar_lectures",
+        "🐧 ملخصات وتوضيحات 📝":"operation_systems_theo_summarize_lectures",
+        "🐧 اسئلة وحلول 📝":"operation_systems_theo_qa_lectures",
+        "🐧 محاضرات السنة السابقة 🕐":"operation_systems_theo_old",
+        "🐧 ملحقات عشوائية من السنة السابقة 🕐": "operation_systems_theo_adds_lectures",
+
+
+
+        "🖼️ المادة في ملف واحد كاملة 📁":"image_process_lab__old",
+        "🖼️ كل جابتر  بملف 🗂":"image_process_lab_lectures",
+        "🖼️ مادة السنة السابقة 🕐":"image_process_lab_old",
+        "🖼️ البرنامج الي نطبق عليه Matlab 💻":"image_process_lab_app",
+        "🖼️ ملحقـات عشوائية من السنة السابقة 🕐": "image_process_lab_adds_lectures",
+
+        "🖼️ المحاضرات في ملف واحد كاملة 📁":"image_process_theo__old",
+        "🖼️ كل جابتر في ملف 🗂":"image_process_theo_lectures",
+        "🖼️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"image_process_theo_ar_all_lectures",
+        "🖼️ كل جابتر مترجم في ملف 🇮🇶":"image_process_theo_ar_lectures",
+        "🖼️ ملخصات وتوضيحات 📝":"image_process_theo_summarize_lectures",
+        "🖼️ اسئلة وحلول 📝":"image_process_theo_qa_lectures",
+        "🖼️ محاضرات السنة السابقة 🕐":"image_process_theo_old",
+        "🖼️ ملحقات عشوائية من السنة السابقة 🕐": "image_process_theo_adds_lectures",
+
+
+
+        "🕸 المادة في ملف واحد كاملة 📁":"dis_systems_lab__old",
+        "🕸 كل جابتر  بملف 🗂":"dis_systems_lab_lectures",
+        "🕸 مادة السنة السابقة 🕐":"dis_systems_lab_old",
+        "🕸 البرنامج الي نطبق عليه Cisco Packet Tracer 💻":"dis_systems_lab_app",
+        "🕸 ملحقـات عشوائية من السنة السابقة 🕐": "dis_systems_lab_adds_lectures",
+
+        "🕸 المحاضرات في ملف واحد كاملة 📁":"dis_systems_theo__old",
+        "🕸 كل جابتر في ملف 🗂":"dis_systems_theo_lectures",
+        "🕸 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"dis_systems_theo_ar_all_lectures",
+        "🕸 كل جابتر مترجم في ملف 🇮🇶":"dis_systems_theo_ar_lectures",
+        "🕸 ملخصات وتوضيحات 📝":"dis_systems_theo_summarize_lectures",
+        "🕸 اسئلة وحلول 📝":"dis_systems_theo_qa_lectures",
+        "🕸 محاضرات السنة السابقة 🕐":"dis_systems_theo_old",
+        "🕸 ملحقات عشوائية من السنة السابقة 🕐": "dis_systems_theo_adds_lectures",
+
+
+
+"-----------------------------------------------------------------------------------------":"",
+
+
+
+        "☁️ المادة في ملف واحد كاملة 📁": "cloud_computing_lab_full",
+        "☁️ كل جابتر  بملف 🗂":"cloud_computing_lab_lectures",
+        "☁️ البرنامج الي نطبق عليه Cisco Packet Tracer 💻": "cloud_computing_lab_app",
+        "☁️ مادة السنة السابقة 🕐": "cloud_computing_lab_old",
+        "☁️ ملحقـات عشوائية من السنة السابقة 🕐": "cloud_computing_lab_adds_lectures",
+
+        "☁️ المحاضرات في ملف واحد كاملة 📁": "cloud_computing_theo_full",
+        "☁️ كل جابتر في ملف 🗂":"cloud_computing_theo_lectures",
+        "☁️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"cloud_computing_theo_ar_all_lectures",
+        "☁️ كل جابتر مترجم في ملف 🇮🇶":"cloud_computing_theo_ar_lectures",
+        "☁️ ملخصات وتوضيحات 📝":"cloud_computing_theo_summarize_lectures",
+        "☁️ اسئلة وحلول 📝":"cloud_computing_theo_qa_lectures",
+        "☁️ محاضرات السنة السابقة 🕐":"cloud_computing_theo_old",
+        "☁️ ملحقات عشوائية من السنة السابقة 🕐": "cloud_computing_theo_adds_lectures",
+
+
+
+
+
+        "📊 المادة في ملف واحد كاملة 📁": "design_and_analyze_systems_lab_full",
+        "📊 كل جابتر  بملف 🗂":"design_and_analyze_systems_lab_lectures",
+        "📊 البرنامج الي نطبق عليه StarUML 💻": "design_and_analyze_systems_lab_app",
+        "📊 مادة السنة السابقة 🕐":"design_and_analyze_systems_lab_old",
+
+        "📊 المحاضرات في ملف واحد كاملة 📁": "design_and_analyze_systems_theo_full",
+        "📊 كل جابتر  في ملف 🗂":"design_and_analyze_systems_theo_lectures",
+        "📊 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"design_and_analyze_systems_theo_ar_all_lectures",
+        "📊 كل جابتر مترجم في ملف 🇮🇶":"design_and_analyze_systems_theo_ar_lectures",
+        "📊 ملخصات وتوضيحات 📝":"design_and_analyze_systems_theo_summarize_lectures",
+        "📊 اسئلة وحلول 📝":"design_and_analyze_systems_theo_qa_lectures",
+        "📊 محاضرات السنة السابقة 🕐":"design_and_analyze_systems_theo_old",
+        "📊 ملحقات عشوائية من السنة السابقة 🕐": "design_and_analyze_systems_theo_adds_lectures",
+
+
+
+
+
+        "📱 المادة في ملف واحد كاملة 📁": "mobile_applications_lab_full",
+        "📱 كل جابتر  بملف 🗂":"mobile_applications_lab_lectures",
+        "📱 البرنامج الي نطبق عليه Flutter 💻": "mobile_applications_lab_app",
+        "📱 مادة السنة السابقة 🕐":"mobile_applications_lab_old",
+        "📱 ملحقـات عشوائية من السنة السابقة 🕐": "mobile_applications_lab_adds_lectures",
+
+        "📱 المحاضرات في ملف واحد كاملة 📁": "mobile_applications_theo_full",
+        "📱 كل جابتر  في ملف 🗂":"mobile_applications_theo_lectures",
+        "📱 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"mobile_applications_theo_ar_all_lectures",
+        "📱 كل جابتر مترجم في ملف 🇮🇶":"mobile_applications_theo_ar_lectures",
+        "📱 ملخصات وتوضيحات 📝":"mobile_applications_theo_summarize_lectures",
+        "📱 اسئلة وحلول 📝":"mobile_applications_theo_qa_lectures",
+        "📱 محاضرات السنة السابقة 🕐":"mobile_applications_theo_old",
+        "📱 ملحقات عشوائية من السنة السابقة 🕐": "mobile_applications_theo_adds_lectures",
+
+
+
+
+
+        "🦾 المادة في ملف واحد كاملة 📁": "iot_lab_full",
+        "🦾 كل جابتر  بملف 🗂":"iot_lab_lectures",
+        "🦾 البرنامج الي نطبق عليه Arduino 💻": "iot_lab_app",
+        "🦾 مادة السنة السابقة 🕐":"iot_lab_old",
+
+        "🦾 المحاضرات في ملف واحد كاملة 📁": "iot_theo_full",
+        "🦾 كل جابتر في ملف 🗂": "iot_theo_lectures",
+        "🦾 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶":"iot_theo_ar_all_lectures",
+        "🦾 كل جابتر مترجم في ملف 🇮🇶":"iot_theo_ar_lectures",
+        "🦾 ملخصات وتوضيحات 📝":"iot_theo_summarize_lectures",
+        "🦾 اسئلة وحلول 📝":"iot_theo_qa_lectures",
+        "🦾 محاضرات السنة السابقة 🕐":"iot_theo_old",
+        "🦾 ملحقات عشوائية من السنة السابقة 🕐": "iot_theo_adds_lectures",
+
+
+
+
+        "🇬🇧 المحاضرات في ملف واحد كاملة 📁":"english_full",
+        "🇬🇧 كل يونت في ملف 🗂":"english_lectures",
+        "🇬🇧 حلول كل يونت  في ملف":"english_qa_lectures",
+        "🇬🇧 محاضرات السنة السابقة 🕐":"english_old",
+        "🇬🇧 ملحقات عشوائية من السنة السابقة 🕐": "english_adds_lectures",
+
+
+
+
+        "💬 المحاضرات في ملف واحد كاملة 📁": "comuni_full",
+        "💬 كل جابتر في ملف 🗂" : "comuni_lectures",
+        "💬 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶" : "communi_ar_all_lectures",
+        "💬 كل جابتر مترجم في ملف 🇮🇶" : "communi_ar_lectures",
+
+
+        
+
+        "فورمة مشروع التخرج الجزء النضري":"graduation_form_lectures",
+        "عناوين مشاريع مقترحة من التدريسيين لسنة 2023-2024":"graduation_titles_lectures",
+        "بعض المشاريع -جزء نضري فقط-":"graduate_old_projects_lectures",
+        "عناوين مشاريع التخرج لسنة 2024-2025":"graduation_new_titles_lectures"
+}

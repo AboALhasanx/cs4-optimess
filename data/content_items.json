@@ -1,0 +1,1396 @@
+[
+  {
+    "id": "webprogramming__old",
+    "button_label": "🌐 المادة في ملف واحد كاملة 📁",
+    "command_key": "webprogramming__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      86
+    ],
+    "active": true
+  },
+  {
+    "id": "webprogramming_summarize_lectures",
+    "button_label": "🌐 ملخصات وتوضيحات 📝",
+    "command_key": "webprogramming_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      315,
+      337,
+      340
+    ],
+    "active": true
+  },
+  {
+    "id": "webprogramming_qa_lectures",
+    "button_label": "🌐 اسئلة وحلول 📝",
+    "command_key": "webprogramming_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      44,
+      46,
+      65
+    ],
+    "active": true
+  },
+  {
+    "id": "webprogramming_app",
+    "button_label": "🌐 البرنامج الي نطبق عليه (VS Code) + (XAMPP) 💻",
+    "command_key": "webprogramming_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      27,
+      28,
+      64,
+      65
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_lab__old",
+    "button_label": "📈 المادة في ملف واحد كاملة 📁",
+    "command_key": "algo_lab__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      85
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_lab_lectures",
+    "button_label": "📈 كل جابتر  بملف 🗂",
+    "command_key": "algo_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      243
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_lab_old",
+    "button_label": "📈 مادة السنة السابقة 🕐",
+    "command_key": "algo_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      44
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_lab_app",
+    "button_label": "📈 البرنامج الي نطبق عليه Dev C++ 💻",
+    "command_key": "algo_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      18,
+      19
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo__old",
+    "button_label": "📈 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "algo_theo__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      84
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_lectures",
+    "button_label": "📈 كل جابتر في ملف 🗂",
+    "command_key": "algo_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      35,
+      93,
+      102,
+      210,
+      214,
+      262
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_ar_all_lectures",
+    "button_label": "📈 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "algo_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      50
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_ar_lectures",
+    "button_label": "📈 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "algo_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      38,
+      94,
+      222,
+      220,
+      221
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_summarize_lectures",
+    "button_label": "📈 ملخصات وتوضيحات 📝",
+    "command_key": "algo_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      155,
+      157
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_qa_lectures",
+    "button_label": "📈 اسئلة وحلول 📝",
+    "command_key": "algo_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      152
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_old",
+    "button_label": "📈 محاضرات السنة السابقة 🕐",
+    "command_key": "algo_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      43
+    ],
+    "active": true
+  },
+  {
+    "id": "algo_theo_adds_lectures",
+    "button_label": "📈 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "algo_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      12
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_lab__old",
+    "button_label": "🛡️ المادة في ملف واحد كاملة 📁",
+    "command_key": "computer_security_lab__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      92
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_lab_lectures",
+    "button_label": "🛡️ كل جابتر  بملف 🗂",
+    "command_key": "computer_security_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      72,
+      108,
+      149,
+      171,
+      185,
+      249
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_lab_old",
+    "button_label": "🛡️ مادة السنة السابقة 🕐",
+    "command_key": "computer_security_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      50
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_lab_app",
+    "button_label": "🛡️ البرنامج الي نطبق عليه Jupyter 💻",
+    "command_key": "computer_security_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      57
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo__old",
+    "button_label": "🛡️ المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "computer_security_theo__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      91
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_lectures",
+    "button_label": "🛡️ كل جابتر في ملف 🗂",
+    "command_key": "computer_security_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      83,
+      80,
+      174,
+      213,
+      263
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_ar_all_lectures",
+    "button_label": "🛡️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "computer_security_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      330
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_ar_lectures",
+    "button_label": "🛡️ كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "computer_security_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      89,
+      90,
+      178,
+      329
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_summarize_lectures",
+    "button_label": "🛡️ ملخصات وتوضيحات 📝",
+    "command_key": "computer_security_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      335,
+      331,
+      332,
+      266,
+      265
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_qa_lectures",
+    "button_label": "🛡️ اسئلة وحلول 📝",
+    "command_key": "computer_security_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      183
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_old",
+    "button_label": "🛡️ محاضرات السنة السابقة 🕐",
+    "command_key": "computer_security_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      49
+    ],
+    "active": true
+  },
+  {
+    "id": "computer_security_theo_adds_lectures",
+    "button_label": "🛡️ ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "computer_security_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      20
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_lab__old",
+    "button_label": "🐧 المادة في ملف واحد كاملة 📁",
+    "command_key": "operation_systems_lab__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      90
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_lab_lectures",
+    "button_label": "🐧 كل جابتر بملف 🗂",
+    "command_key": "operation_systems_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      69,
+      115,
+      211
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_lab_old",
+    "button_label": "🐧 مادة السنة السابقة 🕐",
+    "command_key": "operation_systems_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      46
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_lab_app",
+    "button_label": "🐧 البرامج الي نطبق عليها Dev C++ 💻",
+    "command_key": "operation_systems_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      18
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_lab_adds_lectures",
+    "button_label": "🐧 ملحقـات عشوائية من السنة السابقة 🕐",
+    "command_key": "operation_systems_lab_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      10
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo__old",
+    "button_label": "🐧 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "operation_systems_theo__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      89
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_lectures",
+    "button_label": "🐧 كل جابتر في ملف 🗂",
+    "command_key": "operation_systems_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      76,
+      77,
+      78,
+      79,
+      170
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_ar_all_lectures",
+    "button_label": "🐧 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "operation_systems_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      87
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_ar_lectures",
+    "button_label": "🐧 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "operation_systems_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      84,
+      85,
+      86,
+      88,
+      177
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_summarize_lectures",
+    "button_label": "🐧 ملخصات وتوضيحات 📝",
+    "command_key": "operation_systems_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      136,
+      138,
+      141,
+      144,
+      240,
+      336
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_qa_lectures",
+    "button_label": "🐧 اسئلة وحلول 📝",
+    "command_key": "operation_systems_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "operation_systems_theo_old",
+    "button_label": "🐧 محاضرات السنة السابقة 🕐",
+    "command_key": "operation_systems_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      45
+    ],
+    "active": true
+  },
+  {
+    "id": "operation_systems_theo_adds_lectures",
+    "button_label": "🐧 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "operation_systems_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      8
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_lab__old",
+    "button_label": "🖼️ المادة في ملف واحد كاملة 📁",
+    "command_key": "image_process_lab__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      88
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_lab_lectures",
+    "button_label": "🖼️ كل جابتر  بملف 🗂",
+    "command_key": "image_process_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      96,
+      97,
+      98,
+      253,
+      303
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_lab_old",
+    "button_label": "🖼️ مادة السنة السابقة 🕐",
+    "command_key": "image_process_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      42
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_lab_app",
+    "button_label": "🖼️ البرنامج الي نطبق عليه Matlab 💻",
+    "command_key": "image_process_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      12,
+      13
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_lab_adds_lectures",
+    "button_label": "🖼️ ملحقـات عشوائية من السنة السابقة 🕐",
+    "command_key": "image_process_lab_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      19
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo__old",
+    "button_label": "🖼️ المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "image_process_theo__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      87
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_lectures",
+    "button_label": "🖼️ كل جابتر في ملف 🗂",
+    "command_key": "image_process_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_ar_all_lectures",
+    "button_label": "🖼️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "image_process_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      64
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_ar_lectures",
+    "button_label": "🖼️ كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "image_process_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      61,
+      63,
+      129,
+      189
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_summarize_lectures",
+    "button_label": "🖼️ ملخصات وتوضيحات 📝",
+    "command_key": "image_process_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      95,
+      107,
+      131,
+      256,
+      258
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_qa_lectures",
+    "button_label": "🖼️ اسئلة وحلول 📝",
+    "command_key": "image_process_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      186
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_old",
+    "button_label": "🖼️ محاضرات السنة السابقة 🕐",
+    "command_key": "image_process_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      41
+    ],
+    "active": true
+  },
+  {
+    "id": "image_process_theo_adds_lectures",
+    "button_label": "🖼️ ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "image_process_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      11
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_lab__old",
+    "button_label": "🕸 المادة في ملف واحد كاملة 📁",
+    "command_key": "dis_systems_lab__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      83
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_lab_lectures",
+    "button_label": "🕸 كل جابتر  بملف 🗂",
+    "command_key": "dis_systems_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      33,
+      34,
+      143,
+      172,
+      242
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_lab_old",
+    "button_label": "🕸 مادة السنة السابقة 🕐",
+    "command_key": "dis_systems_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      48
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_lab_app",
+    "button_label": "🕸 البرنامج الي نطبق عليه Cisco Packet Tracer 💻",
+    "command_key": "dis_systems_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      33,
+      34
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_lab_adds_lectures",
+    "button_label": "🕸 ملحقـات عشوائية من السنة السابقة 🕐",
+    "command_key": "dis_systems_lab_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "dis_systems_theo__old",
+    "button_label": "🕸 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "dis_systems_theo__old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      82
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_lectures",
+    "button_label": "🕸 كل جابتر في ملف 🗂",
+    "command_key": "dis_systems_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_ar_all_lectures",
+    "button_label": "🕸 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "dis_systems_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      68
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_ar_lectures",
+    "button_label": "🕸 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "dis_systems_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      60,
+      66,
+      67,
+      223
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_summarize_lectures",
+    "button_label": "🕸 ملخصات وتوضيحات 📝",
+    "command_key": "dis_systems_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      187,
+      188
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_qa_lectures",
+    "button_label": "🕸 اسئلة وحلول 📝",
+    "command_key": "dis_systems_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      209
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_old",
+    "button_label": "🕸 محاضرات السنة السابقة 🕐",
+    "command_key": "dis_systems_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      47
+    ],
+    "active": true
+  },
+  {
+    "id": "dis_systems_theo_adds_lectures",
+    "button_label": "🕸 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "dis_systems_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      9
+    ],
+    "active": true
+  },
+  {
+    "id": "unmapped_67",
+    "button_label": "-----------------------------------------------------------------------------------------",
+    "command_key": "",
+    "channel_key": null,
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "cloud_computing_lab_full",
+    "button_label": "☁️ المادة في ملف واحد كاملة 📁",
+    "command_key": "cloud_computing_lab_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      45
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_lab_lectures",
+    "button_label": "☁️ كل جابتر  بملف 🗂",
+    "command_key": "cloud_computing_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      362,
+      434
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_lab_app",
+    "button_label": "☁️ البرنامج الي نطبق عليه Cisco Packet Tracer 💻",
+    "command_key": "cloud_computing_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      33,
+      34
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_lab_old",
+    "button_label": "☁️ مادة السنة السابقة 🕐",
+    "command_key": "cloud_computing_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      76
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_lab_adds_lectures",
+    "button_label": "☁️ ملحقـات عشوائية من السنة السابقة 🕐",
+    "command_key": "cloud_computing_lab_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      7
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_full",
+    "button_label": "☁️ المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "cloud_computing_theo_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      44
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_lectures",
+    "button_label": "☁️ كل جابتر في ملف 🗂",
+    "command_key": "cloud_computing_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      359,
+      360,
+      363,
+      374,
+      418,
+      419
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_ar_all_lectures",
+    "button_label": "☁️ المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "cloud_computing_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      376
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_ar_lectures",
+    "button_label": "☁️ كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "cloud_computing_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      365,
+      366,
+      373,
+      375,
+      395,
+      396,
+      397,
+      423,
+      431
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_summarize_lectures",
+    "button_label": "☁️ ملخصات وتوضيحات 📝",
+    "command_key": "cloud_computing_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "cloud_computing_theo_qa_lectures",
+    "button_label": "☁️ اسئلة وحلول 📝",
+    "command_key": "cloud_computing_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "cloud_computing_theo_old",
+    "button_label": "☁️ محاضرات السنة السابقة 🕐",
+    "command_key": "cloud_computing_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      75
+    ],
+    "active": true
+  },
+  {
+    "id": "cloud_computing_theo_adds_lectures",
+    "button_label": "☁️ ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "cloud_computing_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      18
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_lab_full",
+    "button_label": "📊 المادة في ملف واحد كاملة 📁",
+    "command_key": "design_and_analyze_systems_lab_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      47
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_lab_lectures",
+    "button_label": "📊 كل جابتر  بملف 🗂",
+    "command_key": "design_and_analyze_systems_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      357,
+      401
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_lab_app",
+    "button_label": "📊 البرنامج الي نطبق عليه StarUML 💻",
+    "command_key": "design_and_analyze_systems_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      68,
+      69
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_lab_old",
+    "button_label": "📊 مادة السنة السابقة 🕐",
+    "command_key": "design_and_analyze_systems_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      78
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_full",
+    "button_label": "📊 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "design_and_analyze_systems_theo_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      46
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_lectures",
+    "button_label": "📊 كل جابتر  في ملف 🗂",
+    "command_key": "design_and_analyze_systems_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      356,
+      355,
+      354,
+      389,
+      353,
+      352,
+      351
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_ar_all_lectures",
+    "button_label": "📊 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "design_and_analyze_systems_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      380
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_ar_lectures",
+    "button_label": "📊 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "design_and_analyze_systems_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      372,
+      367,
+      381,
+      432,
+      433
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_summarize_lectures",
+    "button_label": "📊 ملخصات وتوضيحات 📝",
+    "command_key": "design_and_analyze_systems_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      398
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_qa_lectures",
+    "button_label": "📊 اسئلة وحلول 📝",
+    "command_key": "design_and_analyze_systems_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      459
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_old",
+    "button_label": "📊 محاضرات السنة السابقة 🕐",
+    "command_key": "design_and_analyze_systems_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      77
+    ],
+    "active": true
+  },
+  {
+    "id": "design_and_analyze_systems_theo_adds_lectures",
+    "button_label": "📊 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "design_and_analyze_systems_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      14
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_lab_full",
+    "button_label": "📱 المادة في ملف واحد كاملة 📁",
+    "command_key": "mobile_applications_lab_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      49
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_lab_lectures",
+    "button_label": "📱 كل جابتر  بملف 🗂",
+    "command_key": "mobile_applications_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "mobile_applications_lab_app",
+    "button_label": "📱 البرنامج الي نطبق عليه Flutter 💻",
+    "command_key": "mobile_applications_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [
+      66,
+      67
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_lab_old",
+    "button_label": "📱 مادة السنة السابقة 🕐",
+    "command_key": "mobile_applications_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      72
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_lab_adds_lectures",
+    "button_label": "📱 ملحقـات عشوائية من السنة السابقة 🕐",
+    "command_key": "mobile_applications_lab_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      17
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_theo_full",
+    "button_label": "📱 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "mobile_applications_theo_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      48
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_theo_lectures",
+    "button_label": "📱 كل جابتر  في ملف 🗂",
+    "command_key": "mobile_applications_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "mobile_applications_theo_ar_all_lectures",
+    "button_label": "📱 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "mobile_applications_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "mobile_applications_theo_ar_lectures",
+    "button_label": "📱 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "mobile_applications_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "mobile_applications_theo_summarize_lectures",
+    "button_label": "📱 ملخصات وتوضيحات 📝",
+    "command_key": "mobile_applications_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      409,
+      413,
+      417,
+      422
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_theo_qa_lectures",
+    "button_label": "📱 اسئلة وحلول 📝",
+    "command_key": "mobile_applications_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      460
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_theo_old",
+    "button_label": "📱 محاضرات السنة السابقة 🕐",
+    "command_key": "mobile_applications_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      71
+    ],
+    "active": true
+  },
+  {
+    "id": "mobile_applications_theo_adds_lectures",
+    "button_label": "📱 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "mobile_applications_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      13
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_lab_full",
+    "button_label": "🦾 المادة في ملف واحد كاملة 📁",
+    "command_key": "iot_lab_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      51
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_lab_lectures",
+    "button_label": "🦾 كل جابتر  بملف 🗂",
+    "command_key": "iot_lab_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      346,
+      347,
+      382,
+      403,
+      404
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_lab_app",
+    "button_label": "🦾 البرنامج الي نطبق عليه Arduino 💻",
+    "command_key": "iot_lab_app",
+    "channel_key": "CS_APPS_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "iot_lab_old",
+    "button_label": "🦾 مادة السنة السابقة 🕐",
+    "command_key": "iot_lab_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      74
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_theo_full",
+    "button_label": "🦾 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "iot_theo_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      50
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_theo_lectures",
+    "button_label": "🦾 كل جابتر في ملف 🗂",
+    "command_key": "iot_theo_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      350,
+      368
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_theo_ar_all_lectures",
+    "button_label": "🦾 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "iot_theo_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "iot_theo_ar_lectures",
+    "button_label": "🦾 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "iot_theo_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "iot_theo_summarize_lectures",
+    "button_label": "🦾 ملخصات وتوضيحات 📝",
+    "command_key": "iot_theo_summarize_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "iot_theo_qa_lectures",
+    "button_label": "🦾 اسئلة وحلول 📝",
+    "command_key": "iot_theo_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "iot_theo_old",
+    "button_label": "🦾 محاضرات السنة السابقة 🕐",
+    "command_key": "iot_theo_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [
+      73
+    ],
+    "active": true
+  },
+  {
+    "id": "iot_theo_adds_lectures",
+    "button_label": "🦾 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "iot_theo_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      16
+    ],
+    "active": true
+  },
+  {
+    "id": "english_full",
+    "button_label": "🇬🇧 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "english_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "english_lectures",
+    "button_label": "🇬🇧 كل يونت في ملف 🗂",
+    "command_key": "english_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "english_qa_lectures",
+    "button_label": "🇬🇧 حلول كل يونت  في ملف",
+    "command_key": "english_qa_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "english_old",
+    "button_label": "🇬🇧 محاضرات السنة السابقة 🕐",
+    "command_key": "english_old",
+    "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "english_adds_lectures",
+    "button_label": "🇬🇧 ملحقات عشوائية من السنة السابقة 🕐",
+    "command_key": "english_adds_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "comuni_full",
+    "button_label": "💬 المحاضرات في ملف واحد كاملة 📁",
+    "command_key": "comuni_full",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [
+      43
+    ],
+    "active": true
+  },
+  {
+    "id": "comuni_lectures",
+    "button_label": "💬 كل جابتر في ملف 🗂",
+    "command_key": "comuni_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      349,
+      377,
+      426
+    ],
+    "active": true
+  },
+  {
+    "id": "communi_ar_all_lectures",
+    "button_label": "💬 المحاضرات + الترجمة في ملف واحد كاملة 🇮🇶",
+    "command_key": "communi_ar_all_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "communi_ar_lectures",
+    "button_label": "💬 كل جابتر مترجم في ملف 🇮🇶",
+    "command_key": "communi_ar_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [],
+    "active": false
+  },
+  {
+    "id": "graduation_form_lectures",
+    "button_label": "فورمة مشروع التخرج الجزء النضري",
+    "command_key": "graduation_form_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      21
+    ],
+    "active": true
+  },
+  {
+    "id": "graduation_titles_lectures",
+    "button_label": "عناوين مشاريع مقترحة من التدريسيين لسنة 2023-2024",
+    "command_key": "graduation_titles_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      22
+    ],
+    "active": true
+  },
+  {
+    "id": "graduate_old_projects_lectures",
+    "button_label": "بعض المشاريع -جزء نضري فقط-",
+    "command_key": "graduate_old_projects_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      23,
+      435
+    ],
+    "active": true
+  },
+  {
+    "id": "graduation_new_titles_lectures",
+    "button_label": "عناوين مشاريع التخرج لسنة 2024-2025",
+    "command_key": "graduation_new_titles_lectures",
+    "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
+    "message_ids": [
+      109
+    ],
+    "active": true
+  }
+]

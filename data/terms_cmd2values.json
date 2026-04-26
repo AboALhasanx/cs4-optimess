@@ -1,0 +1,190 @@
+{
+    "commands": {
+
+        "comuni_full" : 43,
+        "comuni_lectures" : [349,377,426],
+
+
+        
+        "cloud_computing_theo_full": 44,
+        "cloud_computing_theo_ar_all_lectures": 376,
+        "cloud_computing_theo_lectures": [359,360,363,374,418,419],
+        "cloud_computing_theo_ar_lectures": [365,366,373,375,395,396,397,423,431],
+        "cloud_computing_theo_summarize_lectures": null,
+        "cloud_computing_theo_qa_lectures": null,
+        "cloud_computing_theo_old": 75,
+        "cloud_computing_theo_adds_lectures": 18,
+
+        "cloud_computing_lab_full": 45,
+        "cloud_computing_lab_lectures": [362, 434],
+        "cloud_computing_lab_old": 76,
+        "cloud_computing_lab_app": [33,34],
+        "cloud_computing_lab_adds_lectures": 7,
+
+
+        
+        "design_and_analyze_systems_theo_full": 46,
+        "design_and_analyze_systems_theo_ar_all_lectures": 380,
+        "design_and_analyze_systems_theo_lectures": [356,355,354,389,353,352,351],
+        "design_and_analyze_systems_theo_ar_lectures": [372,367,381,432,433],
+        "design_and_analyze_systems_theo_summarize_lectures": 398,
+        "design_and_analyze_systems_theo_qa_lectures": 459,
+        "design_and_analyze_systems_theo_old": 77,
+        "design_and_analyze_systems_theo_adds_lectures": 14,
+
+        "design_and_analyze_systems_lab_full": 47,
+        "design_and_analyze_systems_lab_lectures": [357, 401],
+        "design_and_analyze_systems_lab_old": 78,
+        "design_and_analyze_systems_lab_app": [68,69],
+
+
+        
+        "mobile_applications_theo_full": 48,
+        "mobile_applications_theo_summarize_lectures": [409,413,417,422],
+        "mobile_applications_theo_qa_lectures": [460],
+        "mobile_applications_theo_old": 71,
+        "mobile_applications_theo_adds_lectures": 13,
+
+        "mobile_applications_lab_full": 49,
+        "mobile_applications_lab_lectures": null,
+        "mobile_applications_lab_app": [66,67],
+        "mobile_applications_lab_old": 72,
+        "mobile_applications_lab_adds_lectures": 17,
+
+
+        
+        "iot_theo_full": 50,
+        "iot_theo_lectures": [350,368],
+        "iot_theo_ar_all_lectures": null,
+        "iot_theo_ar_lectures": null,
+        "iot_theo_summarize_lectures": null,
+        "iot_theo_qa_lectures": null,
+        "iot_theo_old": 73,
+        "iot_theo_adds_lectures": 16,
+
+        "iot_lab_full": 51,
+        "iot_lab_lectures": [346,347,382,403,404],
+        "iot_lab_app": null,
+        "iot_lab_old": 74,
+
+
+        
+        "graduation_form_lectures": [21],
+        "graduation_titles_lectures": 22,
+        "graduate_old_projects_lectures": [23,435],
+        "graduation_new_titles_lectures":109,
+
+
+
+        "------------------------------------------------------------":"",
+
+
+
+
+
+
+
+
+
+        
+        "webprogramming__old": 86,
+        "webprogramming_summarize_lectures": [315,337,340],
+        "webprogramming_qa_lectures": [44,46,65],
+        "webprogramming_app": [27,28,64,65],
+
+
+
+
+        "algo_lab__old": 85,
+        "algo_lab_old": 44,
+        "algo_lab_lectures":[121,122,123,124,125,126,127,243],
+        "algo_lab_app": [18,19],
+
+
+        "algo_theo__old": 84,
+        "algo_theo_lectures": [35,93,102,210,214,262],
+        "algo_theo_ar_all_lectures": 50,
+        "algo_theo_ar_lectures": [38,94,222,220,221],
+        "algo_theo_summarize_lectures": [155,157],
+        "algo_theo_qa_lectures": [152],
+        "algo_theo_old": 43,
+        "algo_theo_adds_lectures": 12,
+
+
+
+
+
+        "computer_security_lab__old": 92,
+        "computer_security_lab_lectures": [72,108,149,171,185,249],
+        "computer_security_lab_old": 50,
+        "computer_security_lab_app": 57,
+        "computer_security_lab_adds_lectures": null,
+
+
+        "computer_security_theo__old": 91,
+        "computer_security_theo_lectures": [83,80,174,213,263],
+        "computer_security_theo_ar_all_lectures": [330] ,
+        "computer_security_theo_ar_lectures": [89,90,178,329],
+        "computer_security_theo_summarize_lectures": [335,331,332,266,265],
+        "computer_security_theo_qa_lectures": 183,
+        "computer_security_theo_old": 49,
+        "computer_security_theo_adds_lectures": 20,
+
+
+
+
+        "operation_systems_lab__old": 90,
+        "operation_systems_lab_lectures": [69,115,211],
+        "operation_systems_lab_old": 46,
+        "operation_systems_lab_app": 18,
+        "operation_systems_lab_adds_lectures": 10,
+
+
+        "operation_systems_theo__old": 89,
+        "operation_systems_theo_lectures": [76,77,78,79,170],
+        "operation_systems_theo_ar_all_lectures": 87,
+        "operation_systems_theo_ar_lectures":[84,85,86,88,177],
+        "operation_systems_theo_summarize_lectures": [136,138,141,144,240,336],
+        "operation_systems_theo_qa_lectures": null,
+        "operation_systems_theo_old": 45,
+        "operation_systems_theo_adds_lectures": 8,
+
+
+
+
+        "image_process_lab__old": 88,
+        "image_process_lab_lectures": [96,97,98,253,303],
+        "image_process_lab_old": 42,
+        "image_process_lab_app": [12,13],
+        "image_process_lab_adds_lectures": 19,
+
+
+        "image_process_theo__old": 87,
+        "image_process_theo_lectures": [53,54,55,56,57,58,59],
+        "image_process_theo_ar_all_lectures": 64,
+        "image_process_theo_ar_lectures": [61,63,129,189],
+        "image_process_theo_summarize_lectures": [95,107,131,256,258],
+        "image_process_theo_qa_lectures": 186,
+        "image_process_theo_old": 41,
+        "image_process_theo_adds_lectures": 11,
+
+
+
+
+        "dis_systems_lab__old": 83,
+        "dis_systems_lab_lectures": [33,34,143,172,242],
+        "dis_systems_lab_old": 48,
+        "dis_systems_lab_app": [33,34],
+        "dis_systems_lab_adds_lectures": null,
+
+
+        "dis_systems_theo__old": 82,
+        "dis_systems_theo_lectures": [28,29,30,31,32],
+        "dis_systems_theo_ar_all_lectures": 68,
+        "dis_systems_theo_ar_lectures": [60,66,67,223],
+        "dis_systems_theo_summarize_lectures": [187,188],
+        "dis_systems_theo_qa_lectures": 209,
+        "dis_systems_theo_old": 47,
+        "dis_systems_theo_adds_lectures": 9
+    }
+}
