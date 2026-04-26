@@ -2,7 +2,7 @@
 Legacy migration utility — NOT part of normal bot runtime.
 
 This script was used to migrate content from the legacy two-file system
-(data/terms_btn2cmd.json + data/terms_cmd2values.json) into the unified
+(legacy/terms_btn2cmd.json + legacy/terms_cmd2values.json) into the unified
 data/content_items.json catalog.
 
 The bot runtime now reads content_items.json directly. The legacy JSON
@@ -21,8 +21,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from app_paths import DATA_DIR
 
-BUTTONS_PATH = DATA_DIR / "terms_btn2cmd.json"
-VALUES_PATH = DATA_DIR / "terms_cmd2values.json"
+BUTTONS_PATH = PROJECT_ROOT / "legacy" / "terms_btn2cmd.json"
+VALUES_PATH = PROJECT_ROOT / "legacy" / "terms_cmd2values.json"
 
 
 def channel_key_for_command(command_key: str) -> str | None:

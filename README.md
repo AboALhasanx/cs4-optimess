@@ -48,7 +48,7 @@ data/
 Important files:
 
 - `data/content_items.json`: **source of truth** for content buttons, their command keys, target channel, and forwarded message IDs.
-- `data/terms_btn2cmd.json` and `data/terms_cmd2values.json`: legacy migration inputs only — not loaded at runtime.
+- `legacy/terms_btn2cmd.json` and `legacy/terms_cmd2values.json`: legacy migration inputs only — not loaded at runtime.
 - `scripts/migrate_content_items.py`: legacy regeneration tool, not part of runtime.
 
 The bot reads `content_items.json` exclusively. If it is missing, the bot will fail with a clear error. The legacy two-file fallback has been removed.
