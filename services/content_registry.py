@@ -176,8 +176,12 @@ class ContentRegistry:
 
         return report
 
-    def print_strict_report(self, report: dict) -> None:
-        """Print the strict validation report in a human-readable format."""
+    def print_strict_report(self, report: dict, verbose: bool = False) -> None:
+        """Print the strict validation report.
+
+        When verbose=False (default), prints only summary counts.
+        When verbose=True, prints full item-level detail.
+        """
         if not report["catalog_available"]:
             print(
                 "[content-registry] strict: content_items.json not available "
@@ -201,19 +205,35 @@ class ContentRegistry:
 
         for title, _key, items in sections:
             if items:
-                print(f"  [strict] {len(items)} {title}:")
-                for entry in items:
-                    print(f"    - {entry}")
+                print(f"  [strict] {len(items)} {title}")
+                if verbose:
+                    for entry in items:
+                        print(f"    - {entry}")
 
         if report["duplicate_button_labels"]:
-            print(f"  [strict] {len(report['duplicate_button_labels'])} duplicate button_label(s):")
-            for label, ids in report["duplicate_button_labels"].items():
-                print(f"    \"{label}\" appears in: {ids}")
+            count = len(report["duplicate_button_labels"])
+            print(f"  [strict] {count} duplicate button_label(s)")
+            if verbose:
+                for label, ids in report["duplicate_button_labels"].items():
+                    print(f"    \"{label}\" appears in: {ids}")
 
         if report["duplicate_command_keys"]:
-            print(f"  [strict] {len(report['duplicate_command_keys'])} duplicate command_key(s):")
-            for key, ids in report["duplicate_command_keys"].items():
-                print(f"    \"{key}\" appears in: {ids}")
+            count = len(report["duplicate_command_keys"])
+            print(f"  [strict] {count} duplicate command_key(s)")
+            if verbose:
+                for key, ids in report["duplicate_command_keys"].items():
+                    print(f"    \"{key}\" appears in: {ids}")
+
+        if not any((
+            report["inactive_ids"],
+            report["missing_button_label"],
+            report["missing_command_key"],
+            report["empty_message_ids"],
+            report["missing_channel_key"],
+            report["duplicate_button_labels"],
+            report["duplicate_command_keys"],
+        )):
+            print("  [strict] no issues found")
 
         print("[content-registry] strict: scan complete")
 

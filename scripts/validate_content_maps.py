@@ -17,13 +17,18 @@ def main() -> None:
         action="store_true",
         help="Audit every row in content_items.json, including inactive items",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="With --strict, print detailed item lists instead of summary counts only",
+    )
     args = parser.parse_args()
 
     registry = ContentRegistry()
 
     if args.strict:
         strict_report = registry.validate_strict()
-        registry.print_strict_report(strict_report)
+        registry.print_strict_report(strict_report, verbose=args.verbose)
         return
 
     # Default mode: unchanged behavior
