@@ -386,10 +386,8 @@ def return_to_main_menu(message):
 
 
 # ========== تحميل جدول الأوامر (buttons) ==========
-button_to_command = content_registry.button_to_command
 
-
-@bot.message_handler(func=lambda msg: msg.text in button_to_command.keys())
+@bot.message_handler(func=lambda msg: content_registry.get_command_for_button(msg.text) is not None)
 def handle_button(message):
     log_and_forward(message)
     command = content_registry.get_command_for_button(message.text)
