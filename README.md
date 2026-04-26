@@ -47,30 +47,15 @@ data/
 
 Important files:
 
-- `data/terms_btn2cmd.json`: maps visible button text to a command key.
-- `data/terms_cmd2values.json`: maps command keys to Telegram message IDs.
-- `data/content_items.json`: unified catalog generated from the two legacy files.
+- `data/content_items.json`: **source of truth** for content buttons, their command keys, target channel, and forwarded message IDs.
+- `data/terms_btn2cmd.json` and `data/terms_cmd2values.json`: legacy migration inputs only — not loaded at runtime.
+- `scripts/migrate_content_items.py`: legacy regeneration tool, not part of runtime.
 
-The bot reads `content_items.json` if it exists. If it is missing, it falls back to the legacy two-file mapping.
+The bot reads `content_items.json` exclusively. If it is missing, the bot will fail with a clear error. The legacy two-file fallback has been removed.
 
 ## Adding New Content
 
-Legacy method:
-
-1. Add the button label to `data/terms_btn2cmd.json`.
-2. Map that label to a `command_key`.
-3. Add the same `command_key` to `data/terms_cmd2values.json`.
-4. Set the value to a Telegram message ID or list of message IDs.
-5. Run:
-
-```bash
-python scripts/migrate_content_items.py
-python scripts/validate_content_maps.py
-```
-
-Preferred method:
-
-Edit `data/content_items.json` and add:
+Edit `data/content_items.json` and add an entry:
 
 ```json
 {
@@ -83,12 +68,24 @@ Edit `data/content_items.json` and add:
 }
 ```
 
+Required fields:
+- `button_label`: the exact text shown on the reply keyboard button.
+- `command_key`: stable internal identifier for the content.
+- `channel_key`: which channel the message IDs belong to.
+- `message_ids`: one or more Telegram message IDs to forward.
+
+Optional fields:
+- `active`: set to `false` to keep the entry in the catalog but hide it from runtime.
+- `notes`: document why an entry is inactive or incomplete.
+
 Supported `channel_key` values:
 
 - `CS_STG4_CHANNEL_ID`
 - `CS_STG4_ONEFILE_CHANNEL_ID`
 - `CS_STG4_DELETED_CHANNEL_ID`
 - `CS_APPS_CHANNEL_ID`
+
+Inactive rows (with `"active": false`) are intentionally preserved in the catalog but are ignored at runtime. Each inactive row should have a `notes` field explaining why it is inactive.
 
 ## Data Path Resolution
 
@@ -108,7 +105,23 @@ Run:
 python scripts/validate_content_maps.py
 ```
 
-Warnings are allowed for old incomplete mappings, but missing core data files are errors.
+This validates the loaded (active) content maps. No warnings means every active button has valid message IDs.
+
+To audit **every row** in the catalog, including inactive ones:
+
+```bash
+python scripts/validate_content_maps.py --strict
+```
+
+This reports counts of inactive items, missing fields, empty message IDs, and duplicates.
+
+For full item-level detail:
+
+```bash
+python scripts\validate_content_maps.py --strict --verbose
+```
+
+Inactive rows in `content_items.json` are expected and are documented with `notes` fields.
 
 ## Removed Features
 
