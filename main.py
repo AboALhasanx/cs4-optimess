@@ -365,16 +365,6 @@ def web_prog_redirect(message):
     check_and_respond(message, respond)
 
 
-@bot.message_handler(func=lambda msg: msg.text == term1_Table_of_lectures)
-def term1_table_redirect(message):
-    log_and_forward(message)
-
-    def respond(msg):
-        bot.forward_message(msg.chat.id, cs_stg4, 39)
-
-    check_and_respond(message, respond)
-
-
 # ========== الكورس الثاني ==========
 @bot.message_handler(commands=["term2"])
 @bot.message_handler(func=lambda msg: msg.text in ["الكورس الثاني", back_term2])
@@ -473,16 +463,6 @@ def com_skills_redirect(message):
 
     def respond(msg):
         chose_from_markup(msg, com_skills_buttons())
-
-    check_and_respond(message, respond)
-
-
-@bot.message_handler(func=lambda msg: msg.text == term2_Table_of_lectures)
-def term2_table_redirect(message):
-    log_and_forward(message)
-
-    def respond(msg):
-        bot.forward_message(msg.chat.id, cs_stg4, 40)
 
     check_and_respond(message, respond)
 

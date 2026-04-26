@@ -1392,5 +1392,21 @@
       109
     ],
     "active": true
+  },
+  {
+    "id": "term1_table_of_lectures",
+    "button_label": "📇 جدول محاضرات كروب A 📇",
+    "command_key": "term1_table_of_lectures",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [39],
+    "active": true
+  },
+  {
+    "id": "term2_table_of_lectures",
+    "button_label": "📇 جدول محاضرات كروب B 📇",
+    "command_key": "term2_table_of_lectures",
+    "channel_key": "CS_STG4_CHANNEL_ID",
+    "message_ids": [40],
+    "active": true
   }
 ]
