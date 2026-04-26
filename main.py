@@ -159,6 +159,11 @@ def chose_from_markup(message, reply_markup):
     bot.reply_to(message, chose_from, parse_mode="HTML", reply_markup=reply_markup)
 
 
+def reply_with_markup(message, markup_factory):
+    """Build a keyboard via markup_factory and send it with the standard prompt."""
+    chose_from_markup(message, markup_factory())
+
+
 # ========== أمر /about وأمر تقييم البوت ==========
 @bot.message_handler(commands=["about"])
 @bot.message_handler(func=lambda msg: msg.text == "🪧 عن البوت 🪧" or msg.text == "about")
@@ -233,31 +238,19 @@ def handle_rating(message):
 @bot.message_handler(func=lambda msg: msg.text in ["الكورس الأول", back_term1])
 def to_term1_menu(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, main_term1_keyboard())
-
-    respond(message)
+    reply_with_markup(message, main_term1_keyboard)
 
 
 @bot.message_handler(func=lambda msg: msg.text == graduation)
 def graduation_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, graduation_keys())
-
-    respond(message)
+    reply_with_markup(message, graduation_keys)
 
 
 @bot.message_handler(func=lambda msg: msg.text == computer_security_lab_title)
 def comp_sec_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, computer_security_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, computer_security_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == computer_security_theo_title)
