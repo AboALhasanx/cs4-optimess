@@ -119,11 +119,3 @@ legacy/disabled_quizzes/
 ```
 
 Forced channel subscription checks were also removed. Users can open `/start`, use menus, and request content without being blocked by membership checks.
-
-## Message Logging
-
-User message forwarding/logging to `LOG_CHANNEL_ID` is still active. The logic now lives in:
-
-```text
-services/message_logger.py
-```
