@@ -1,3 +1,4 @@
+import argparse
 import sys
 from pathlib import Path
 
@@ -8,7 +9,24 @@ from services.content_registry import ContentRegistry
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Validate content maps for the Telegram bot."
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Audit every row in content_items.json, including inactive items",
+    )
+    args = parser.parse_args()
+
     registry = ContentRegistry()
+
+    if args.strict:
+        strict_report = registry.validate_strict()
+        registry.print_strict_report(strict_report)
+        return
+
+    # Default mode: unchanged behavior
     has_warnings = any(registry.validation_report.values())
     if has_warnings:
         print("[content-registry] validation completed with warnings")

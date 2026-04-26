@@ -97,6 +97,126 @@ class ContentRegistry:
             if values:
                 print(f"[content-registry] warning: {key}: {values[:20]}")
 
+    def validate_strict(self) -> dict:
+        """Validate every row in content_items.json, including inactive items.
+
+        Returns a dict with findings:
+          - total_items, catalog_available
+          - inactive_items, inactive_ids
+          - missing_button_label, missing_command_key
+          - empty_message_ids, missing_channel_key
+          - duplicate_button_labels, duplicate_command_keys
+
+        Only meaningful when content_items.json is the active source.
+        Does NOT replace validate() — this is an additional audit pass.
+        """
+        report: dict = {
+            "total_items": len(self.content_items),
+            "catalog_available": bool(self.content_items),
+            "inactive_items": 0,
+            "inactive_ids": [],
+            "missing_button_label": [],
+            "missing_command_key": [],
+            "empty_message_ids": [],
+            "missing_channel_key": [],
+            "duplicate_button_labels": {},
+            "duplicate_command_keys": {},
+        }
+
+        if not self.content_items:
+            return report
+
+        seen_labels: dict[str, list[str]] = {}
+        seen_commands: dict[str, list[str]] = {}
+
+        for item in self.content_items:
+            item_id = item.get("id") or "<no id>"
+            active = item.get("active", True)
+            button_label = item.get("button_label")
+            command_key = item.get("command_key")
+            message_ids = item.get("message_ids")
+            channel_key = item.get("channel_key")
+
+            # 1. Track inactive items separately (not errors)
+            if not active:
+                report["inactive_items"] += 1
+                report["inactive_ids"].append(item_id)
+
+            # 2. Structural completeness checks
+            if not button_label:
+                report["missing_button_label"].append(item_id)
+            if not command_key:
+                report["missing_command_key"].append(item_id)
+
+            # 3. Empty message_ids (empty list, null, or absent)
+            if not message_ids or (isinstance(message_ids, list) and len(message_ids) == 0):
+                report["empty_message_ids"].append(item_id)
+
+            # 4. Missing channel_key
+            if not channel_key:
+                report["missing_channel_key"].append(item_id)
+
+            # 5. Track for duplicates
+            if button_label:
+                if button_label not in seen_labels:
+                    seen_labels[button_label] = []
+                seen_labels[button_label].append(item_id)
+            if command_key:
+                if command_key not in seen_commands:
+                    seen_commands[command_key] = []
+                seen_commands[command_key].append(item_id)
+
+        # Collect only actual duplicates (more than one occurrence)
+        for label, ids in seen_labels.items():
+            if len(ids) > 1:
+                report["duplicate_button_labels"][label] = ids
+        for key, ids in seen_commands.items():
+            if len(ids) > 1:
+                report["duplicate_command_keys"][key] = ids
+
+        return report
+
+    def print_strict_report(self, report: dict) -> None:
+        """Print the strict validation report in a human-readable format."""
+        if not report["catalog_available"]:
+            print(
+                "[content-registry] strict: content_items.json not available "
+                "(using legacy fallback files)"
+            )
+            return
+
+        print(
+            f"[content-registry] strict: scanning all {report['total_items']} "
+            f"catalog items ({report['inactive_items']} inactive, "
+            f"{report['total_items'] - report['inactive_items']} active)"
+        )
+
+        sections: list[tuple[str, str, list | dict]] = [
+            ("inactive items (informational)", "inactive_ids", report["inactive_ids"]),
+            ("items missing button_label", "missing_button_label", report["missing_button_label"]),
+            ("items missing command_key", "missing_command_key", report["missing_command_key"]),
+            ("items with empty message_ids", "empty_message_ids", report["empty_message_ids"]),
+            ("items missing channel_key", "missing_channel_key", report["missing_channel_key"]),
+        ]
+
+        for title, _key, items in sections:
+            if items:
+                print(f"  [strict] {len(items)} {title}:")
+                for entry in items:
+                    print(f"    - {entry}")
+
+        if report["duplicate_button_labels"]:
+            print(f"  [strict] {len(report['duplicate_button_labels'])} duplicate button_label(s):")
+            for label, ids in report["duplicate_button_labels"].items():
+                print(f"    \"{label}\" appears in: {ids}")
+
+        if report["duplicate_command_keys"]:
+            print(f"  [strict] {len(report['duplicate_command_keys'])} duplicate command_key(s):")
+            for key, ids in report["duplicate_command_keys"].items():
+                print(f"    \"{key}\" appears in: {ids}")
+
+        print("[content-registry] strict: scan complete")
+
     def get_command_for_button(self, button_text: str) -> str | None:
         return self.button_to_command.get(button_text)
 
