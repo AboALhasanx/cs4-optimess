@@ -267,14 +267,4 @@ class ContentRegistry:
                 "CS_STG4_DELETED_CHANNEL_ID": CS_STG4_DELETED_CHANNEL_ID,
                 "CS_APPS_CHANNEL_ID": CS_APPS_CHANNEL_ID,
             }.get(channel_key)
-
-        # TODO: Replace suffix-based routing with explicit channel metadata.
-        if "_full" in command_key:
-            return CS_STG4_CHANNEL_ID
-        if "_lectures" in command_key:
-            return CS_STG4_ONEFILE_CHANNEL_ID
-        if "_old" in command_key:
-            return CS_STG4_DELETED_CHANNEL_ID
-        if "_app" in command_key:
-            return CS_APPS_CHANNEL_ID
         return None
