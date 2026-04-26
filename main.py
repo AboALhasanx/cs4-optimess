@@ -285,51 +285,31 @@ def op_sys_theo_redirect(message):
 @bot.message_handler(func=lambda msg: msg.text == algo_lab_title)
 def algo_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, algo_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, algo_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == algo_theo_title)
 def algo_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, algo_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, algo_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == dis_systems_lab_title)
 def dis_sys_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, dis_systems_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, dis_systems_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == dis_systems_theo_title)
 def dis_sys_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, dis_systems_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, dis_systems_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == web_prog_title)
 def web_prog_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, web_prog_buttons())
-
-    respond(message)
+    reply_with_markup(message, web_prog_buttons)
 
 
 # ========== الكورس الثاني ==========
