@@ -5,7 +5,10 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from app_paths import BUTTONS_PATH, DATA_DIR, VALUES_PATH
+from app_paths import DATA_DIR
+
+BUTTONS_PATH = DATA_DIR / "terms_btn2cmd.json"
+VALUES_PATH = DATA_DIR / "terms_cmd2values.json"
 
 
 def channel_key_for_command(command_key: str) -> str | None:

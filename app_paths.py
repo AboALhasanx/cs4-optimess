@@ -23,7 +23,3 @@ def resolve_data_file(filename: str) -> Path:
     raise FileNotFoundError(
         f"Required data file not found: {filename}. Checked: {checked}"
     )
-
-
-BUTTONS_PATH = resolve_data_file("terms_btn2cmd.json")
-VALUES_PATH = resolve_data_file("terms_cmd2values.json")
