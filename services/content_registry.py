@@ -36,12 +36,6 @@ class ContentRegistry:
         self.validation_report = self.validate()
         self.print_validation_report()
 
-    def _load_json(self, path: Path) -> dict:
-        if not path.exists():
-            raise FileNotFoundError(f"Required content map is missing: {path}")
-        with path.open("r", encoding="utf-8") as file:
-            return json.load(file)
-
     def _load_content_items(self, path: Path) -> None:
         with path.open("r", encoding="utf-8") as file:
             self.content_items = json.load(file)
