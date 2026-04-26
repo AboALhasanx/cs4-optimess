@@ -156,8 +156,7 @@ def send_welcome(message):
 
 
 def chose_from_markup(message, reply_markup):
-    bot.reply_to(message, chose_from, parse_mode="HTML", reply_markup=reply_markup)
-
+    bot.send_message(message.chat.id, chose_from, parse_mode="HTML", reply_markup=reply_markup)
 
 def reply_with_markup(message, markup_factory):
     """Build a keyboard via markup_factory and send it with the standard prompt."""
