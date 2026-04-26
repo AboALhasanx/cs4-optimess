@@ -9,14 +9,12 @@ from config import (
     BOT_TOKEN,
     FIREBASE_URL,
     TELEGRAM_PROXY_URL,
-    cs_stg4,
 )
 from global_vars import (
     about_bot_msg,
     graduation,
     # كورس أول:
     back_term1,
-    term1_Table_of_lectures,
     chose_from,
     algo_lab_title,
     algo_theo_title,
@@ -31,7 +29,6 @@ from global_vars import (
     web_prog_title,
     # كورس ثاني:
     back_term2,
-    term2_Table_of_lectures,
     cloud_computing_lab_title,
     cloud_computing_theo_title,
     iot_lab_title,
@@ -380,16 +377,12 @@ def com_skills_redirect(message):
 )
 def return_to_main_menu(message):
     log_and_forward(message)
-
-    def respond(msg):
-        bot.reply_to(
-            msg,
-            "<b>القائمة الرئيسية</b>",
-            parse_mode="HTML",
-            reply_markup=main_term_select(),
-        )
-
-    respond(message)
+    bot.send_message(
+        message.chat.id,
+        "<b>القائمة الرئيسية</b>",
+        parse_mode="HTML",
+        reply_markup=main_term_select(),
+    )
 
 
 # ========== تحميل جدول الأوامر (buttons) ==========
