@@ -2,7 +2,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from app_paths import BUTTONS_PATH, DATA_DIR, VALUES_PATH
+from app_paths import DATA_DIR
 from config import (
     CS_APPS_CHANNEL_ID,
     CS_STG4_CHANNEL_ID,
@@ -21,21 +21,18 @@ class ContentTarget:
 class ContentRegistry:
     def __init__(
         self,
-        buttons_path: Path = BUTTONS_PATH,
-        values_path: Path = VALUES_PATH,
         content_items_path: Path = DATA_DIR / "content_items.json",
     ) -> None:
-        self.buttons_path = buttons_path
-        self.values_path = values_path
         self.content_items_path = content_items_path
         self.content_items = []
         self.command_to_channel_key = {}
-        if content_items_path.exists():
-            self._load_content_items(content_items_path)
-        else:
-            self.button_to_command = self._load_json(buttons_path)
-            values_data = self._load_json(values_path)
-            self.command_to_values = values_data.get("commands", {})
+        if not content_items_path.exists():
+            raise FileNotFoundError(
+                f"Content catalog not found: {content_items_path}. "
+                "The legacy two-file fallback has been removed; "
+                "content_items.json is now required."
+            )
+        self._load_content_items(content_items_path)
         self.validation_report = self.validate()
         self.print_validation_report()
 
