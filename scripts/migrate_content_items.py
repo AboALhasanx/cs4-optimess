@@ -1,3 +1,17 @@
+"""
+Legacy migration utility — NOT part of normal bot runtime.
+
+This script was used to migrate content from the legacy two-file system
+(data/terms_btn2cmd.json + data/terms_cmd2values.json) into the unified
+data/content_items.json catalog.
+
+The bot runtime now reads content_items.json directly. The legacy JSON
+files are kept on disk for reference but are not loaded at runtime.
+
+Do not run this script unless you intentionally need to regenerate the
+catalog from the legacy files.
+"""
+
 import json
 import sys
 from pathlib import Path
