@@ -317,101 +317,61 @@ def web_prog_redirect(message):
 @bot.message_handler(func=lambda msg: msg.text in ["الكورس الثاني", back_term2])
 def to_term2_menu(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, main_term2_keyboard())
-
-    respond(message)
+    reply_with_markup(message, main_term2_keyboard)
 
 
 @bot.message_handler(func=lambda msg: msg.text == english_title)
 def english_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, english_buttons())
-
-    respond(message)
+    reply_with_markup(message, english_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == cloud_computing_lab_title)
 def cloud_comp_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, cloud_computing_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, cloud_computing_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == cloud_computing_theo_title)
 def cloud_comp_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, cloud_computing_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, cloud_computing_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == mobile_applications_theo_title)
 def mobile_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, mobile_applications_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, mobile_applications_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == iot_lab_title)
 def iot_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, iot_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, iot_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == iot_theo_title)
 def iot_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, iot_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, iot_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_lab_title)
 def das_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, design_and_analyze_systems_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, design_and_analyze_systems_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == design_and_analyze_systems_theo_title)
 def das_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, design_and_analyze_systems_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, design_and_analyze_systems_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == com_skills_title)
 def com_skills_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, com_skills_buttons())
-
-    respond(message)
+    reply_with_markup(message, com_skills_buttons)
 
 
 # زرّ القائمة الرئيسية أو الخروج من التقييم
