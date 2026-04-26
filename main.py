@@ -255,51 +255,31 @@ def comp_sec_lab_redirect(message):
 @bot.message_handler(func=lambda msg: msg.text == computer_security_theo_title)
 def comp_sec_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, computer_security_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, computer_security_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == image_process_lab_title)
 def img_proc_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, image_process_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, image_process_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == image_process_theo_title)
 def img_proc_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, image_process_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, image_process_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == operation_systems_lab_title)
 def op_sys_lab_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, operation_systems_lab_buttons())
-
-    respond(message)
+    reply_with_markup(message, operation_systems_lab_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == operation_systems_theo_title)
 def op_sys_theo_redirect(message):
     log_and_forward(message)
-
-    def respond(msg):
-        chose_from_markup(msg, operation_systems_theo_buttons())
-
-    respond(message)
+    reply_with_markup(message, operation_systems_theo_buttons)
 
 
 @bot.message_handler(func=lambda msg: msg.text == algo_lab_title)
