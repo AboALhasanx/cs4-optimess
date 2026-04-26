@@ -441,7 +441,7 @@
     "command_key": "operation_systems_theo_qa_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "operation_systems_theo_old",
@@ -662,7 +662,7 @@
     "command_key": "dis_systems_lab_adds_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "dis_systems_theo__old",
@@ -758,7 +758,7 @@
     "command_key": "",
     "channel_key": null,
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "cloud_computing_lab_full",
@@ -871,7 +871,7 @@
     "command_key": "cloud_computing_theo_summarize_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "cloud_computing_theo_qa_lectures",
@@ -879,7 +879,7 @@
     "command_key": "cloud_computing_theo_qa_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "cloud_computing_theo_old",
@@ -1049,7 +1049,7 @@
     "command_key": "mobile_applications_lab_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "mobile_applications_lab_app",
@@ -1098,7 +1098,7 @@
     "command_key": "mobile_applications_theo_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "mobile_applications_theo_ar_all_lectures",
@@ -1106,7 +1106,7 @@
     "command_key": "mobile_applications_theo_ar_all_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "mobile_applications_theo_ar_lectures",
@@ -1114,7 +1114,7 @@
     "command_key": "mobile_applications_theo_ar_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "mobile_applications_theo_summarize_lectures",
@@ -1189,7 +1189,7 @@
     "command_key": "iot_lab_app",
     "channel_key": "CS_APPS_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "iot_lab_old",
@@ -1228,7 +1228,7 @@
     "command_key": "iot_theo_ar_all_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "iot_theo_ar_lectures",
@@ -1236,7 +1236,7 @@
     "command_key": "iot_theo_ar_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "iot_theo_summarize_lectures",
@@ -1244,7 +1244,7 @@
     "command_key": "iot_theo_summarize_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "iot_theo_qa_lectures",
@@ -1252,7 +1252,7 @@
     "command_key": "iot_theo_qa_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "iot_theo_old",
@@ -1280,7 +1280,7 @@
     "command_key": "english_full",
     "channel_key": "CS_STG4_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "english_lectures",
@@ -1288,7 +1288,7 @@
     "command_key": "english_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "english_qa_lectures",
@@ -1296,7 +1296,7 @@
     "command_key": "english_qa_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "english_old",
@@ -1304,7 +1304,7 @@
     "command_key": "english_old",
     "channel_key": "CS_STG4_DELETED_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "english_adds_lectures",
@@ -1312,7 +1312,7 @@
     "command_key": "english_adds_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "comuni_full",
@@ -1342,7 +1342,7 @@
     "command_key": "communi_ar_all_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "communi_ar_lectures",
@@ -1350,7 +1350,7 @@
     "command_key": "communi_ar_lectures",
     "channel_key": "CS_STG4_ONEFILE_CHANNEL_ID",
     "message_ids": [],
-    "active": true
+    "active": false
   },
   {
     "id": "graduation_form_lectures",
